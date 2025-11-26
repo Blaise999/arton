@@ -1,8 +1,8 @@
+// app/tools/arton-index/page.tsx
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 
 type PillarKey = "cost" | "speed" | "mobility" | "life" | "simplicity";
 
@@ -450,34 +450,27 @@ function ToolCard({ title, href, description }: ToolCardProps) {
 }
 
 export default function ArtonIndexClient() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
+  const [selectedCode, setSelectedCode] = useState<string>("DM");
 
-  const [selectedCode, setSelectedCode] = useState<string>(() => {
-    const param = searchParams?.get("country");
-    const candidate = param?.toUpperCase();
-    if (candidate && COUNTRIES.some((c) => c.code === candidate)) {
-      return candidate;
-    }
-    return "DM";
-  });
-
+  // Read ?country=... from the URL on the client only
   useEffect(() => {
-    const param = searchParams?.get("country");
-    const candidate = param?.toUpperCase();
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const candidate = params.get("country")?.toUpperCase();
     if (candidate && COUNTRIES.some((c) => c.code === candidate)) {
       setSelectedCode(candidate);
     }
-  }, [searchParams]);
+  }, []);
 
   const handleSelectCountry = (code: string) => {
     setSelectedCode(code);
-    const current = new URLSearchParams(
-      Array.from(searchParams?.entries() ?? [])
-    );
-    current.set("country", code);
-    const qs = current.toString();
-    router.push(qs ? `?${qs}` : "?", { scroll: false });
+
+    // Keep URL in sync with selection (client only)
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      url.searchParams.set("country", code);
+      window.history.replaceState(null, "", url.toString());
+    }
   };
 
   const selectedCountry = useMemo(
@@ -691,7 +684,7 @@ export default function ArtonIndexClient() {
                 {(
                   Object.keys(PILLAR_META) as Array<keyof typeof PILLAR_META>
                 ).map((key) => (
-                  <th key={key} className="px-3 py-3 text-center w:[10%]">
+                  <th key={key} className="px-3 py-3 text-center w-[10%]">
                     <div>{PILLAR_META[key].label}</div>
                   </th>
                 ))}
@@ -802,7 +795,7 @@ export default function ArtonIndexClient() {
               </li>
               <li>
                 Bulgaria and Malta remain among Europe’s most compelling
-                offerings from the investor perspective.
+              offerings from the investor perspective.
               </li>
               <li>
                 The U.K. and the USA rank lower on the index principally due to
