@@ -397,7 +397,7 @@ export default function GrenadaCitizenshipByInvestmentPage() {
                 className="w-full transition-transform duration-300 group-hover:scale-[1.02]"
               />
               <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 group-hover:bg-slate-100">
-                Get download link
+                Get download links
               </div>
             </Link>
           </section>

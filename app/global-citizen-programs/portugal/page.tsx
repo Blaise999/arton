@@ -33,8 +33,8 @@ const whyChooseText =
 const countryHighlights = [
   "Most welcoming country for expats, by InterNations",
   "4th most peaceful country in the world, by Global Peace Index, Institute for Economics & Peace",
-  "World’s Leading Destination, by World Gold Awards",
-  "Europe’s Leading Destination, by World Gold Awards",
+  "World's Leading Destination, by World Travel Awards",
+  "Europe's Leading Destination, by World Travel Awards",
 ];
 
 const programBenefits = [
@@ -66,7 +66,9 @@ const investmentIntro = [
 const investmentOptions = [
   {
     label: "Capital Option",
-    items: ["€500,000 – Acquisition of participation units in venture capital or investment funds."],
+    items: [
+      "€500,000 – Acquisition of participation units in venture capital or investment funds.",
+    ],
   },
   {
     label: "Capital and Employment Option",
@@ -136,10 +138,10 @@ const countrySnapshot = {
   location:
     "Southwestern Europe, bordering the North Atlantic Ocean, west of Spain",
   capital: "Lisbon",
-  timeDifference: "UTC 0",
+  timeDifference: "UTC+0",
   totalArea: "92,090 sq. km.",
   ageDemographics:
-    "0–14: 15.50%, 15–24: 11.4%, 24–54: 41.88%, 55–64: 12.07%, 65+: 19.15%",
+    "0–14: 15.50%, 15–24: 11.4%, 25–54: 41.88%, 55–64: 12.07%, 65+: 19.15%",
   languages: "Portuguese (official), Mirandese (official, but locally used)",
   religions:
     "Roman Catholic: 81%, Other Christian: 3.3%, Other (includes Jewish, Muslim, Other): 0.6%, None: 6.8%, Unspecified: 8.3%",
@@ -218,7 +220,9 @@ export default function PortugalResidencyByInvestmentPage() {
 
             <Section title="Why Choose Portugal?">
               <p>{whyChooseText}</p>
-              <p className="mt-1 font-semibold text-slate-900">Country highlights:</p>
+              <p className="mt-1 font-semibold text-slate-900">
+                Country highlights:
+              </p>
               <BulletList items={countryHighlights} />
             </Section>
 
@@ -414,11 +418,13 @@ export default function PortugalResidencyByInvestmentPage() {
 
               <div className="mt-4 flex gap-4">
                 <div className="w-24 flex-shrink-0 overflow-hidden rounded-xl border border-amber-300/70 bg-white">
-                  <img
-                    src={BROCHURE_IMAGE}
-                    alt="Portugal program brochure cover"
-                    className="h-32 w-full object-cover"
-                  />
+                  <a href={BROCHURE_IMAGE} target="_blank" rel="noreferrer">
+                    <img
+                      src={BROCHURE_IMAGE}
+                      alt="Portugal program brochure cover"
+                      className="h-32 w-full object-cover"
+                    />
+                  </a>
                 </div>
                 <div className="flex flex-1 flex-col justify-between text-xs text-slate-800">
                   <p>
@@ -426,12 +432,14 @@ export default function PortugalResidencyByInvestmentPage() {
                     eligibility, investment options and process stages.
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
-                    <button
-                      type="button"
+                    <a
+                      href={BROCHURE_IMAGE}
+                      target="_blank"
+                      rel="noreferrer"
                       className="inline-flex items-center justify-center rounded-full border border-slate-900 bg-slate-900 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-black"
                     >
                       Get download link
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -448,7 +456,7 @@ export default function PortugalResidencyByInvestmentPage() {
                 global mobility.
               </p>
               <div className="mt-4">
-                <PassportIndexWidget countryCode="PT" />
+              
               </div>
             </div>
           </aside>

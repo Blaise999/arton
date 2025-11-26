@@ -361,8 +361,6 @@ export default function QuebecCanadaPage() {
       </Head>
 
       <main className="bg-[#f4f4f4] text-[#333333] min-h-screen">
-      
-
         {/* Hero */}
         <section className="relative">
           <div
@@ -589,7 +587,7 @@ export default function QuebecCanadaPage() {
                 <div className="grid md:grid-cols-3 gap-4 text-center text-sm">
                   <div className="border border-[#e4e0db] p-4 bg-[#f9f6f2]">
                     <a
-                      href="https://www.artoncapitals.com/tools/program-check/"
+                      href="/tools/program-check"
                       target="_blank"
                       rel="noreferrer"
                       className="block font-semibold text-[#b88654] uppercase tracking-[0.15em] mb-1"
@@ -603,7 +601,7 @@ export default function QuebecCanadaPage() {
                   </div>
                   <div className="border border-[#e4e0db] p-4 bg-[#f9f6f2]">
                     <a
-                      href="https://www.artoncapitals.com/tools/program-cost/"
+                      href="/tools/program-cost"
                       target="_blank"
                       rel="noreferrer"
                       className="block font-semibold text-[#b88654] uppercase tracking-[0.15em] mb-1"
@@ -617,7 +615,7 @@ export default function QuebecCanadaPage() {
                   </div>
                   <div className="border border-[#e4e0db] p-4 bg-[#f9f6f2]">
                     <a
-                      href="https://www.artoncapitals.com/tools/program-map/"
+                      href="/tools/program-map"
                       target="_blank"
                       rel="noreferrer"
                       className="block font-semibold text-[#b88654] uppercase tracking-[0.15em] mb-1"
@@ -632,15 +630,12 @@ export default function QuebecCanadaPage() {
 
                 <div className="mt-6 text-center">
                   <p className="text-sm mb-2">Need more information?</p>
-                  <button
-                    className="px-5 py-2 text-xs font-semibold tracking-[0.2em] uppercase bg-black text-white hover:bg-[#333]"
-                    onClick={() =>
-                      (window.location.href =
-                        "https://www.artoncapitals.com/become-a-global-citizen/")
-                    }
+                  <a
+                    href="/become-a-global-citizen"
+                    className="inline-block px-5 py-2 text-xs font-semibold tracking-[0.2em] uppercase bg-black text-white hover:bg-[#333]"
                   >
                     Contact us.
-                  </button>
+                  </a>
                 </div>
               </div>
 
