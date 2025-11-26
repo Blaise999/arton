@@ -1,18 +1,31 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import tsParser from "@typescript-eslint/parser";
 
-const eslintConfig = defineConfig([
+export default defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
   ]),
-]);
 
-export default eslintConfig;
+  // ✅ simple fix: parse TS files as TypeScript
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsParser,
+    },
+  },
+
+  // keep base rule off for TS
+  {
+    rules: {
+      "no-unused-vars": "off",
+    },
+  },
+]);

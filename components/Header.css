@@ -1,0 +1,288 @@
+/* ---------- Base header ---------- */
+
+.ac-header {
+  background: #000;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.ac-header-top {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  padding: 8px 0 4px;
+  text-transform: uppercase;
+}
+
+/* main bar */
+.ac-header-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+}
+
+/* ---------- Desktop nav ---------- */
+
+.ac-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 60px;
+  width: 100%;
+}
+
+.ac-nav {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ac-nav-left,
+.ac-nav-right {
+  flex: 1;
+  align-items: center;
+}
+
+.ac-nav-left {
+  justify-content: flex-end;
+}
+.ac-nav-right {
+  justify-content: flex-start;
+}
+
+.ac-nav-item {
+  position: relative;
+}
+
+.ac-nav-link {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 0;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.ac-nav-link:hover {
+  opacity: 0.7;
+}
+
+/* center logo */
+.ac-logo-wrap {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ac-logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f1c27d, #c68b3f);
+  box-shadow: 0 0 0 6px #000, 0 8px 25px rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(16px);
+  pointer-events: auto;
+}
+
+.ac-logo-circle img {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+}
+
+/* Flag item */
+.ac-flag img {
+  width: 22px;
+  height: auto;
+}
+
+/* ---------- Desktop dropdowns ---------- */
+
+.ac-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: rgba(0, 0, 0, 0.96);
+  border: 1px solid #111;
+  padding: 10px 0;
+  display: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+}
+
+.ac-dropdown-item {
+  display: block;
+  padding: 9px 24px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #b8c0cc;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ac-dropdown-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ac-nav-item:hover > .ac-dropdown {
+  display: block;
+}
+
+/* ---------- Hamburger (mobile) ---------- */
+
+.ac-burger {
+  display: none; /* shown only on mobile */
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  z-index: 60;
+}
+
+.ac-burger span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: #fff;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+/* animate when open */
+.ac-header--mobile-open .ac-burger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.ac-header--mobile-open .ac-burger span:nth-child(2) {
+  opacity: 0;
+}
+.ac-header--mobile-open .ac-burger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* logo wrapper specifically for mobile layout */
+.ac-logo-wrap--mobile {
+  display: none;
+}
+
+/* ---------- Mobile menu overlay ---------- */
+
+.ac-mobile-menu {
+  display: none;
+}
+
+.ac-mobile-menu.is-open {
+  display: block;
+  position: fixed;
+  top: 64px; /* approximate header height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  overflow-y: auto;
+  padding: 20px 18px 40px;
+  z-index: 55;
+}
+
+.ac-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ac-mobile-section-title {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.ac-mobile-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.ac-mobile-section li a {
+  display: block;
+  padding: 7px 0;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #b8c0cc;
+}
+
+.ac-mobile-section li a:hover {
+  color: #ffffff;
+}
+
+/* ---------- Responsiveness ---------- */
+
+@media (max-width: 768px) {
+  .ac-header-nav {
+    display: none; /* hide desktop nav */
+  }
+
+  .ac-logo-wrap {
+    display: none; /* hide desktop logo version */
+  }
+
+  .ac-logo-wrap--mobile {
+    display: flex; /* show centered logo on mobile */
+    flex: 1;
+    justify-content: center;
+    padding: 10px 0 4px;
+  }
+
+  .ac-logo-circle {
+    transform: translateY(0);
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 0 3px #000, 0 6px 18px rgba(0, 0, 0, 0.8);
+  }
+
+  .ac-burger {
+    display: block;
+  }
+
+  .ac-header-bar {
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .ac-mobile-menu.is-open {
+    top: 64px; /* match actual mobile header height */
+  }
+}
+
+/* a bit wider desktop spacing */
+@media (min-width: 1200px) {
+  .ac-header-nav {
+    padding: 10px 110px;
+  }
+}
