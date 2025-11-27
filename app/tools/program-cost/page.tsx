@@ -81,42 +81,52 @@ function formatMoney(amountUSD: number, currency: Currency): string {
   })}`;
 }
 
+/**
+ * Map program code -> country page slug.
+ * All totals + country names will link to these paths.
+ */
 function getProgramHref(code: ProgramCost["code"]): string {
   switch (code) {
     case "AG":
-      return "/programs/antigua-and-barbuda";
+      return "/global-citizen-programs/antigua-and-barbuda";
     case "BG":
-      return "/programs/bulgaria";
+      return "/global-citizen-programs/bulgaria";
     case "CA":
-      return "/programs/canada-quebec";
+      return "/global-citizen-programs/canada-quebec";
     case "CY":
-      return "/programs/cyprus";
+      return "/global-citizen-programs/cyprus";
     case "DM":
-      return "/programs/dominica";
+      return "/global-citizen-programs/dominica";
     case "GR":
-      return "/programs/greece";
+      // matches folder: greece-golden-visa-program
+      return "/global-citizen-programs/greece-golden-visa-program";
     case "GD":
-      return "/programs/grenada";
+      return "/global-citizen-programs/grenada";
     case "HU":
-      return "/programs/hungary";
+      return "/global-citizen-programs/hungary";
     case "LV":
-      return "/programs/latvia";
+      return "/global-citizen-programs/latvia";
     case "MT":
-      return "/programs/malta";
+      return "/global-citizen-programs/malta";
+    case "ME": // Montenegro (if your ProgramCost uses ME)
+      return "/global-citizen-programs/montenegro";
     case "PT":
-      return "/programs/portugal";
+      return "/global-citizen-programs/portugal";
     case "LC":
-      return "/programs/saint-lucia";
+      return "/global-citizen-programs/saint-lucia";
+
+    // If/when you add these pages, keep the slugs in sync:
     case "KN":
-      return "/programs/st-kitts-nevis";
+      return "/global-citizen-programs/st-kitts-nevis";
     case "ST":
-      return "/programs/sao-tome-principe";
+      return "/global-citizen-programs/sao-tome-principe";
     case "ES":
-      return "/programs/spain";
+      return "/global-citizen-programs/spain";
     case "TR":
-      return "/programs/turkey";
+      return "/global-citizen-programs/turkey";
     case "US":
-      return "/programs/usa-eb5";
+      return "/global-citizen-programs/usa-eb5";
+
     default:
       return "#";
   }
