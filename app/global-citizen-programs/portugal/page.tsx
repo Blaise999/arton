@@ -114,11 +114,11 @@ const faqs: FAQ[] = [
 ];
 
 const artonIndexBreakdown = {
-  cost: 16,
-  speed: 7,
+  cost: 19,
+  speed: 19,
   mobility: 20,
-  qualityOfLife: 8,
-  simplicity: 3,
+  qualityOfLife: 20,
+  simplicity: 10,
 } as const;
 
 const artonIndex = {

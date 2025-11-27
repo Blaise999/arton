@@ -654,7 +654,7 @@ export default function QuebecCanadaPage() {
                       <div className="absolute inset-11 rounded-full border-[8px] border-[#c0c1c3]" />
                       <div className="absolute inset-16 rounded-full border-[8px] border-[#e6bd9d]" />
                       <h2 className="relative text-3xl font-semibold text-[#444]">
-                        0
+                        91
                       </h2>
                     </div>
                   </div>
@@ -662,23 +662,23 @@ export default function QuebecCanadaPage() {
                   <ul className="grid grid-cols-2 gap-2 text-xs uppercase tracking-[0.15em]">
                     <li className="flex items-center justify-between">
                       <span>cost</span>
-                      <strong>0</strong>
+                      <strong>18</strong>
                     </li>
                     <li className="flex items-center justify-between">
                       <span>speed</span>
-                      <strong>0</strong>
+                      <strong>17</strong>
                     </li>
                     <li className="flex items-center justify-between">
                       <span>global mobility</span>
-                      <strong>0</strong>
+                      <strong>20</strong>
                     </li>
                     <li className="flex items-center justify-between">
                       <span>quality of life</span>
-                      <strong>0</strong>
+                      <strong>20</strong>
                     </li>
                     <li className="flex items-center justify-between col-span-2">
                       <span>simplicity</span>
-                      <strong>0</strong>
+                      <strong>16</strong>
                     </li>
                   </ul>
 

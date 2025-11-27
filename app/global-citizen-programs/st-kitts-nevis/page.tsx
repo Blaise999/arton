@@ -41,11 +41,12 @@ const faqs: { question: string; answer: string }[] = [
 ];
 
 const indexMetrics = [
-  { key: "cost", label: "Cost", value: 80 },
+   { key: "cost", label: "Arton Index Score", value: 83 },
+  { key: "cost", label: "Cost", value: 20 },
   { key: "speed", label: "Speed", value: 15 },
-  { key: "mobility", label: "Global mobility", value: 75 },
-  { key: "life", label: "Quality of life", value: 100 },
-  { key: "simplicity", label: "Simplicity", value: 30 },
+  { key: "mobility", label: "Global mobility", value: 13 },
+  { key: "life", label: "Quality of life", value: 15 },
+  { key: "simplicity", label: "Simplicity", value: 20 },
 ];
 
 const programTools = [

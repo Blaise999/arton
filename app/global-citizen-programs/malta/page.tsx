@@ -17,11 +17,11 @@ const BROCHURE_IMAGE =
 
 // Real Arton Index values from the original page (canvas data-end attributes)
 const ARTON_INDEX = {
-  cost: 80,
-  speed: 15,
-  globalMobility: 75,
-  qualityOfLife: 100,
-  simplicity: 30,
+  cost: 13,
+  speed: 17,
+  globalMobility: 20,
+  qualityOfLife: 20,
+  simplicity: 19,
 };
 
 // Simple overall score – you can tweak if you later find the exact formula
@@ -30,8 +30,7 @@ const OVERALL_INDEX = Math.round(
     ARTON_INDEX.speed +
     ARTON_INDEX.globalMobility +
     ARTON_INDEX.qualityOfLife +
-    ARTON_INDEX.simplicity) /
-    5
+    ARTON_INDEX.simplicity) 
 );
 
 export default function MaltaResidencyByInvestmentPage() {

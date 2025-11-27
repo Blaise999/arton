@@ -25,11 +25,12 @@ type ArtonIndexMetric = {
   value: number; // 0–20
 };
 
+// UPDATED so the values sum to 79 (Arton Index score = 79)
 const artonIndexMetrics: ArtonIndexMetric[] = [
   { key: "cost", label: "Cost", value: 15 },
   { key: "speed", label: "Speed", value: 20 },
-  { key: "global-mobility", label: "Global mobility", value: 12 },
-  { key: "quality-of-life", label: "Quality of life", value: 4 },
+  { key: "global-mobility", label: "Global mobility", value: 15 },
+  { key: "quality-of-life", label: "Quality of life", value: 9 },
   { key: "simplicity", label: "Simplicity", value: 20 },
 ];
 

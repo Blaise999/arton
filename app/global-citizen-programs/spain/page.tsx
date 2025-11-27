@@ -222,30 +222,30 @@ export default function SpainResidencyProgramPage() {
                 <div className="absolute inset-12 rounded-full border border-slate-400" />
                 <div className="absolute inset-16 rounded-full border border-slate-500" />
                 <span className="relative text-3xl font-semibold tracking-wide text-slate-900">
-                  0
+                 90
                 </span>
               </div>
 
               <ul className="grid grid-cols-2 gap-2 w-full text-xs md:text-[13px] text-slate-700">
                 <li className="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2">
                   <span>Cost</span>
-                  <span className="font-semibold">0</span>
+                  <span className="font-semibold">20</span>
                 </li>
                 <li className="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2">
                   <span>Speed</span>
-                  <span className="font-semibold">0</span>
+                  <span className="font-semibold">20</span>
                 </li>
                 <li className="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2">
                   <span>Global mobility</span>
-                  <span className="font-semibold">0</span>
+                  <span className="font-semibold">20</span>
                 </li>
                 <li className="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2">
                   <span>Quality of life</span>
-                  <span className="font-semibold">0</span>
+                  <span className="font-semibold">15</span>
                 </li>
                 <li className="flex items-center justify-between border border-slate-200 rounded-lg px-3 py-2 col-span-2">
                   <span>Simplicity</span>
-                  <span className="font-semibold">0</span>
+                  <span className="font-semibold">15</span>
                 </li>
               </ul>
 
