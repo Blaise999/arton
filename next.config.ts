@@ -19,6 +19,12 @@ const nextConfig = {
         hostname: "artoncapital.com",
         pathname: "/wp-content/**",
       },
+
+       {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**", // allow all Unsplash image paths
+      },
       // if you later start pulling images from your own cloned host,
       // just add patterns like this:
       // {

@@ -68,7 +68,7 @@ const ROUTES: Record<string, string> = {
   // Arton Capital
   "ABOUT ARTON CAPITAL": "/arton-capital",
   "MISSION & VISION": "/arton-capital/mission-vision",
-  "MEET THE TEAM": "/team",
+  "MEET THE TEAM": "/teams",
   "BOARD OF ADVISORS": "/arton-capital/board-of-advisors",
   "ARMAND ARTON’S QUEST": "https://www.armandarton.com/",
   "INTERNATIONAL PARTNERS": "/arton-capital/international-partners",

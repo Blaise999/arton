@@ -72,7 +72,7 @@ const ROUTES: Record<string, string> = {
   // Arton Capital
   "ABOUT ARTON CAPITAL": "/arton-capital",
   "MISSION & VISION": "/arton-capital/mission-vision",
-  "MEET THE TEAM": "/team",
+  "MEET THE TEAM": "/teams",
   "BOARD OF ADVISORS": "/arton-capital/board-of-advisors",
   "ARMAND ARTON’S QUEST": "https://www.armandarton.com/",
   "INTERNATIONAL PARTNERS": "/arton-capital/international-partners",
@@ -259,7 +259,7 @@ export function SiteHeader() {
           >
             {/* LEFT NAV */}
             {!isScrolled && (
-              <ul className="flex justify-end gap-10 lg:gap-12 mr-16 lg:mr-24 text-[0.62rem] font-normal uppercase tracking-[0.26em]">
+              <ul className="mr-24 flex justify-end gap-9 text-[0.62rem] font-normal uppercase tracking-[0.26em] lg:mr-32 lg:gap-12">
                 {NAV_ITEMS.slice(0, 3).map((item) => (
                   <li key={item.label} className="group relative">
                     <button
@@ -303,7 +303,7 @@ export function SiteHeader() {
 
             {/* RIGHT NAV */}
             {!isScrolled && (
-              <ul className="flex items-center justify-start gap-10 lg:gap-12 ml-16 lg:ml-24 text-[0.62rem] font-normal uppercase tracking-[0.26em]">
+              <ul className="ml-24 flex items-center justify-start gap-10 text-[0.62rem] font-normal uppercase tracking-[0.26em] lg:ml-32 lg:gap-12">
                 {NAV_ITEMS.slice(3).map((item) => (
                   <li key={item.label} className="group relative">
                     <button
@@ -351,19 +351,19 @@ export function SiteHeader() {
             )}
           </div>
 
-          {/* CENTER LOGO */}
+          {/* CENTER LOGO – slightly reduced sizes */}
           <Link
             href="/"
             className={`absolute left-1/2 top-full flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-black bg-[radial-gradient(circle_at_30%_30%,#f7d9a4,#c88a3e)] ${
               isScrolled
-                ? "h-[56px] w-[56px] shadow-[0_0_0_5px_#000,0_12px_24px_rgba(0,0,0,0.85)]"
-                : "h-[88px] w-[88px] shadow-[0_0_0_6px_#000,0_18px_40px_rgba(0,0,0,0.95)]"
+                ? "h-[52px] w-[52px] shadow-[0_0_0_5px_#000,0_12px_24px_rgba(0,0,0,0.85)]"
+                : "h-[80px] w-[80px] shadow-[0_0_0_6px_#000,0_18px_40px_rgba(0,0,0,0.95)]"
             }`}
           >
             <img
               src="/Pics/logo.png"
               alt="Logo"
-              className="h-full w-full object-contain rounded-full"
+              className="h-full w-full rounded-full object-contain"
             />
           </Link>
         </div>
@@ -372,15 +372,28 @@ export function SiteHeader() {
       {/* MOBILE BAR */}
       <div className="bg-black md:hidden">
         <div className="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+          {/* Modern animated hamburger */}
           <button
             type="button"
             aria-label="Toggle navigation"
             onClick={toggleMobile}
-            className="flex h-9 w-9 flex-col justify-center gap-[4px] rounded-full border border-white/20 bg-black/60 px-2"
+            className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-white/5 backdrop-blur-sm"
           >
-            <span className="h-[2px] w-full bg-white" />
-            <span className="h-[2px] w-full bg-white" />
-            <span className="h-[2px] w-full bg-white" />
+            <span
+              className={`absolute block h-[1.5px] w-4 rounded-full bg-white transition-transform duration-200 ${
+                mobileOpen ? "translate-y-0 rotate-45" : "-translate-y-[4px]"
+              }`}
+            />
+            <span
+              className={`absolute block h-[1.5px] w-4 rounded-full bg-white transition-opacity duration-150 ${
+                mobileOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`absolute block h-[1.5px] w-4 rounded-full bg-white transition-transform duration-200 ${
+                mobileOpen ? "translate-y-0 -rotate-45" : "translate-y-[4px]"
+              }`}
+            />
           </button>
 
           <div className="h-9 w-9" />
@@ -389,21 +402,21 @@ export function SiteHeader() {
           {!isScrolled && (
             <Link
               href="/"
-              className="absolute left-1/2 top-full flex h-[80px] w-[80px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-black bg-[radial-gradient(circle_at_30%_30%,#f7d9a4,#c88a3e)] shadow-[0_0_0_6px_#000,0_18px_40px_rgba(0,0,0,0.95)]"
+              className="absolute left-1/2 top-full flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-black bg-[radial-gradient(circle_at_30%_30%,#f7d9a4,#c88a3e)] shadow-[0_0_0_6px_#000,0_18px_40px_rgba(0,0,0,0.95)]"
             >
               <img
                 src="/Pics/logo.png"
                 alt="Logo"
-                className="h-full w-full object-contain rounded-full"
+                className="h-full w-full rounded-full object-contain"
               />
             </Link>
           )}
         </div>
       </div>
 
-      {/* MOBILE OVERLAY MENU */}
+      {/* MOBILE OVERLAY MENU – refreshed look */}
       <div
-        className={`fixed inset-0 z-40 bg-black/95 text-white transition-opacity duration-200 md:hidden ${
+        className={`fixed inset-0 z-40 bg-gradient-to-b from-black via-black/95 to-[#050b18] text-white transition-opacity duration-200 md:hidden ${
           mobileOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -411,19 +424,20 @@ export function SiteHeader() {
       >
         <div className="mx-auto flex h-full max-w-6xl flex-col px-4 py-6">
           <div className="mb-4 flex items-center justify-between">
-            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-300">
-              Menu
+            <span className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-slate-200">
+              Navigation
             </span>
             <button
               type="button"
               onClick={closeMobile}
-              className="rounded-full border border-white/30 bg-black/60 px-3 py-1 text-[0.7rem]"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/5 text-sm"
+              aria-label="Close navigation"
             >
-              Close
+              ✕
             </button>
           </div>
 
-          <nav className="flex-1 overflow-y-auto rounded-2xl border border-white/10 bg-black/70 px-2 py-2 backdrop-blur-sm">
+          <nav className="flex-1 overflow-y-auto rounded-3xl border border-white/10 bg-white/5 px-2 py-2 shadow-[0_18px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl">
             {NAV_ITEMS.map((item, idx) => {
               const open = activeSection === idx;
               return (
@@ -434,12 +448,12 @@ export function SiteHeader() {
                   <button
                     type="button"
                     onClick={() => setActiveSection(open ? null : idx)}
-                    className="flex w-full items-center justify-between px-2 py-3 text-left text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    className="flex w-full items-center justify-between px-3 py-3 text-left text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-slate-100"
                   >
                     <span>{item.label}</span>
                     <span
-                      className={`text-xs transition-transform duration-150 ${
-                        open ? "rotate-90" : ""
+                      className={`flex h-5 w-5 items-center justify-center rounded-full border border-white/20 text-[0.7rem] transition-transform duration-150 ${
+                        open ? "rotate-90 bg-white/10" : ""
                       }`}
                     >
                       ›
@@ -448,10 +462,10 @@ export function SiteHeader() {
 
                   <div
                     className={`overflow-hidden transition-all duration-200 ${
-                      open ? "max-h-64" : "max-h-0"
+                      open ? "max-h-72" : "max-h-0"
                     }`}
                   >
-                    <ul className="space-y-1 pb-3 pl-4 pr-2 text-sm">
+                    <ul className="space-y-1 pb-3 pl-4 pr-3 text-sm">
                       {item.children.map((child) => {
                         const isExternal = child.href.startsWith("http");
                         return (
@@ -462,7 +476,7 @@ export function SiteHeader() {
                                 target="_blank"
                                 rel="noreferrer"
                                 onClick={closeMobile}
-                                className="block py-1 text-slate-200 hover:text-[#f3c27d]"
+                                className="block rounded-md py-1.5 text-[0.78rem] text-slate-200 hover:bg-white/10 hover:text-[#f3c27d]"
                               >
                                 {child.label}
                               </a>
@@ -470,7 +484,7 @@ export function SiteHeader() {
                               <Link
                                 href={child.href}
                                 onClick={closeMobile}
-                                className="block py-1 text-slate-200 hover:text-[#f3c27d]"
+                                className="block rounded-md py-1.5 text-[0.78rem] text-slate-200 hover:bg-white/10 hover:text-[#f3c27d]"
                               >
                                 {child.label}
                               </Link>
