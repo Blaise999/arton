@@ -4,79 +4,355 @@ import * as React from "react";
 interface ArtonEligibilityEmailProps {
   name: string;
   email: string;
-  country: string;
-  budget: string;
-  family: string;
-  timeline: string;
+  country?: string;
+  budget?: string;
+  family?: string;
+  timeline?: string;
 }
 
-export function ArtonEligibilityEmail(props: ArtonEligibilityEmailProps) {
-  const { name, email, country, budget, family, timeline } = props;
+export function ArtonEligibilityEmail({
+  name,
+  email,
+  country,
+  budget,
+  family,
+  timeline,
+}: ArtonEligibilityEmailProps) {
+  const siteUrl = "https://artoncapitals.com";
+  const logoUrl = `${siteUrl}/Pics/logo.png`;
+  const bannerUrl = `${siteUrl}/Pics/img.png`;
 
   return (
     <div
       style={{
+        margin: 0,
+        padding: "24px 0",
+        backgroundColor: "#f3f4f6",
         fontFamily:
-          '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        backgroundColor: "#0b0b0b",
-        color: "#f5f5f5",
-        padding: "24px",
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+        color: "#111827",
       }}
     >
-      <h1 style={{ fontSize: "20px", margin: "0 0 8px" }}>
-        New Citizenship Eligibility Assessment
-      </h1>
-      <p style={{ margin: "0 0 16px", fontSize: "13px", opacity: 0.8 }}>
-        A new lead has been submitted from the Arton Capital website.
-      </p>
-
       <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          fontSize: "13px",
-        }}
+        width="100%"
+        cellPadding={0}
+        cellSpacing={0}
+        style={{ borderCollapse: "collapse" }}
       >
         <tbody>
           <tr>
-            <td style={{ padding: "8px 0", width: "160px", opacity: 0.7 }}>
-              Name
+            <td align="center">
+              {/* Card */}
+              <table
+                width={640}
+                cellPadding={0}
+                cellSpacing={0}
+                style={{
+                  borderCollapse: "collapse",
+                  backgroundColor: "#ffffff",
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  boxShadow:
+                    "0 18px 45px rgba(15,23,42,0.18), 0 0 0 1px rgba(15,23,42,0.03)",
+                }}
+              >
+                <tbody>
+                  {/* HEADER */}
+                  <tr>
+                    <td
+                      align="center"
+                      style={{
+                        padding: "28px 32px 18px",
+                        borderBottom: "1px solid #e5e7eb",
+                      }}
+                    >
+                      <a
+                        href={siteUrl}
+                        style={{
+                          textDecoration: "none",
+                          display: "inline-block",
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 64,
+                            height: 64,
+                            borderRadius: "999px",
+                            backgroundColor: "#000000",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            margin: "0 auto 16px",
+                            overflow: "hidden",
+                          }}
+                        >
+                          <img
+                            src={logoUrl}
+                            alt="Arton Capital"
+                            style={{
+                              width: "64px",
+                              height: "64px",
+                              objectFit: "cover",
+                              display: "block",
+                            }}
+                          />
+                        </div>
+                      </a>
+
+                      <a
+                        href={siteUrl}
+                        style={{
+                          textDecoration: "none",
+                          color: "#111827",
+                          display: "inline-block",
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontSize: 13,
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                            fontWeight: 600,
+                            textAlign: "center",
+                          }}
+                        >
+                          ARTON CAPITAL
+                        </div>
+                        <div
+                          style={{
+                            marginTop: 6,
+                            fontSize: 11,
+                            letterSpacing: "0.22em",
+                            textTransform: "uppercase",
+                            color: "#6b7280",
+                            textAlign: "center",
+                          }}
+                        >
+                          EMPOWERING GLOBAL CITIZENSHIP®
+                        </div>
+                      </a>
+
+                      <div
+                        style={{
+                          marginTop: 20,
+                          width: 32,
+                          height: 1,
+                          backgroundColor: "#d1d5db",
+                        }}
+                      />
+                    </td>
+                  </tr>
+
+                  {/* MAIN CONTENT */}
+                  <tr>
+                    <td
+                      style={{
+                        padding: "24px 32px 16px",
+                        fontSize: 14,
+                        lineHeight: 1.6,
+                        color: "#111827",
+                      }}
+                    >
+                      <p
+                        style={{
+                          margin: "0 0 10px",
+                          fontSize: 13,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.12em",
+                          color: "#6b7280",
+                        }}
+                      >
+                        Citizenship by Investment · Eligibility Assessment
+                      </p>
+
+                      <p
+                        style={{
+                          margin: "0 0 18px",
+                          fontSize: 16,
+                          fontWeight: 600,
+                          letterSpacing: "0.02em",
+                        }}
+                      >
+                        Dear {name || "Client"},
+                      </p>
+
+                      <p style={{ margin: "0 0 12px" }}>
+                        Thank you for completing your initial eligibility
+                        assessment for Citizenship by Investment with Arton
+                        Capital.
+                      </p>
+
+                      <p style={{ margin: "0 0 12px" }}>
+                        Our advisory team will review your profile and revert to{" "}
+                        <strong>{email}</strong> with tailored program options,
+                        indicative costs and suggested next steps.
+                      </p>
+
+                      <p
+                        style={{
+                          margin: "18px 0 8px",
+                          fontSize: 13,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.12em",
+                          color: "#6b7280",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Summary of your answers
+                      </p>
+
+                      <table
+                        width="100%"
+                        cellPadding={0}
+                        cellSpacing={0}
+                        style={{
+                          borderCollapse: "collapse",
+                          fontSize: 13,
+                          marginBottom: 12,
+                        }}
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style={{
+                                padding: "6px 0",
+                                width: "40%",
+                                color: "#6b7280",
+                              }}
+                            >
+                              Country of residence
+                            </td>
+                            <td style={{ padding: "6px 0", fontWeight: 500 }}>
+                              {country || "Not provided"}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style={{
+                                padding: "6px 0",
+                                color: "#6b7280",
+                              }}
+                            >
+                              Investment capacity
+                            </td>
+                            <td style={{ padding: "6px 0", fontWeight: 500 }}>
+                              {budget || "Not provided"}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style={{
+                                padding: "6px 0",
+                                color: "#6b7280",
+                              }}
+                            >
+                              Family profile
+                            </td>
+                            <td style={{ padding: "6px 0", fontWeight: 500 }}>
+                              {family || "Not provided"}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style={{
+                                padding: "6px 0",
+                                color: "#6b7280",
+                              }}
+                            >
+                              Desired timeline
+                            </td>
+                            <td style={{ padding: "6px 0", fontWeight: 500 }}>
+                              {timeline || "Not provided"}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <p style={{ margin: "12px 0" }}>
+                        If any of the above details need to be updated, you can
+                        simply reply to this email with the corrected
+                        information.
+                      </p>
+
+                      <p style={{ margin: "12px 0" }}>
+                        We appreciate the opportunity to guide you on your path
+                        to global citizenship.
+                      </p>
+
+                      <div style={{ marginTop: 24 }}>
+                        <a
+                          href={siteUrl}
+                          style={{
+                            display: "inline-block",
+                            padding: "10px 20px",
+                            borderRadius: 999,
+                            backgroundColor: "#000000",
+                            color: "#f9fafb",
+                            fontSize: 13,
+                            fontWeight: 600,
+                            letterSpacing: "0.08em",
+                            textTransform: "uppercase",
+                            textDecoration: "none",
+                          }}
+                        >
+                          Visit Arton Capital
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  {/* BANNER */}
+                  <tr>
+                    <td>
+                      <a href={siteUrl} style={{ display: "block" }}>
+                        <img
+                          src={bannerUrl}
+                          alt="The world is yours"
+                          style={{
+                            width: "100%",
+                            maxHeight: 260,
+                            objectFit: "cover",
+                            display: "block",
+                          }}
+                        />
+                      </a>
+                    </td>
+                  </tr>
+
+                  {/* FOOTER */}
+                  <tr>
+                    <td
+                      style={{
+                        padding: "16px 32px 24px",
+                        borderTop: "1px solid #e5e7eb",
+                        fontSize: 12,
+                        color: "#6b7280",
+                      }}
+                    >
+                      <p style={{ margin: "0 0 4px", fontWeight: 600 }}>
+                        Arton Capital
+                      </p>
+                      <p style={{ margin: "0 0 4px" }}>
+                        1 Westmount Square, Suite 1110, Montreal, Quebec,
+                        H3Z 2P9
+                      </p>
+                      <p style={{ margin: "0 0 8px" }}>
+                        Boulevard Plaza, Tower 1, Level 20, Suite 2004, Burj
+                        Khalifa District, P.O.Box 121701, Dubai
+                      </p>
+                      <p style={{ margin: 0, fontSize: 11, color: "#9ca3af" }}>
+                        This email may contain confidential information intended
+                        solely for the addressee. If you received it in error,
+                        please notify the sender and delete this message.
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </td>
-            <td style={{ padding: "8px 0" }}>{name}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "8px 0", opacity: 0.7 }}>Email</td>
-            <td style={{ padding: "8px 0" }}>{email}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "8px 0", opacity: 0.7 }}>
-              Country of residence
-            </td>
-            <td style={{ padding: "8px 0" }}>{country}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "8px 0", opacity: 0.7 }}>
-              Investment capacity
-            </td>
-            <td style={{ padding: "8px 0" }}>{budget}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "8px 0", opacity: 0.7 }}>
-              Family composition
-            </td>
-            <td style={{ padding: "8px 0" }}>{family}</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "8px 0", opacity: 0.7 }}>Timeline</td>
-            <td style={{ padding: "8px 0" }}>{timeline}</td>
           </tr>
         </tbody>
       </table>
-
-      <p style={{ marginTop: "24px", fontSize: "12px", opacity: 0.7 }}>
-        This email was generated automatically from the Citizenship by
-        Investment assessment form on your website.
-      </p>
     </div>
   );
 }
