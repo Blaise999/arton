@@ -1,6 +1,8 @@
 // app/api/eligibility/route.ts
-import { NextRequest, NextResponse } from "next/server";
-import { resend } from "@/libs/resend"; // make sure this exists (shown below)
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 type EligibilityPayload = {
   name: string;
@@ -11,12 +13,11 @@ type EligibilityPayload = {
   timeline: string;
 };
 
-export async function POST(req: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const body = (await req.json()) as Partial<EligibilityPayload>;
+    const body = (await request.json()) as Partial<EligibilityPayload>;
     const { name, email, country, budget, family, timeline } = body;
 
-    // Validate (same things you ask in the form)
     if (!name || !email) {
       return NextResponse.json(
         { ok: false, error: "Name and email are required" },
@@ -24,16 +25,21 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 1) Customized email *to the user* using their name & email
-    await resend.emails.send({
-      from: "Arton Capitals <no-reply@artoncapitals.com>", // your verified sender
-      to: email, // <= exactly what they typed in the form
+    // use the SAME from as admin-send so you know it’s verified
+    const from =
+      process.env.RESEND_FROM_EMAIL ||
+      "Arton Capital <advisors@mail.artoncapitals.com>";
+
+    // 1) send personalized email to the user
+    const { data: userData, error: userError } = await resend.emails.send({
+      from,
+      to: [email], // same style as admin route
       subject: "Your Citizenship by Investment Eligibility Assessment",
       html: `
         <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6;">
           <p>Dear ${name},</p>
 
-          <p>Thank you for completing your initial eligibility assessment for Citizenship by Investment with Arton Capitals.</p>
+          <p>Thank you for completing your initial eligibility assessment for Citizenship by Investment with Arton Capital.</p>
 
           <p>Our advisory team will review your profile and share tailored program options, indicative costs and suggested next steps.</p>
 
@@ -45,40 +51,51 @@ export async function POST(req: NextRequest) {
             <li><strong>Desired timeline:</strong> ${timeline || "Not provided"}</li>
           </ul>
 
-          <p style="margin-top: 16px;">
-            If any of the above details need correction, you may reply to this email with the updated information.
-          </p>
-
-          <p style="margin-top: 16px;">Best regards,<br/>Arton Capitals Advisory Team</p>
+          <p style="margin-top: 16px;">Best regards,<br/>Arton Capital Advisory Team</p>
         </div>
       `,
     });
 
-    // 2) (Optional) Internal notification to you
-    await resend.emails.send({
-      from: "Arton Capitals <no-reply@artoncapitals.com>",
-      to: "advisory@artoncapitals.com", // change to your internal email
-      subject: "New CBI Eligibility Assessment",
-      html: `
-        <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6;">
-          <p>A new eligibility assessment has been submitted:</p>
-          <ul>
-            <li><strong>Name:</strong> ${name}</li>
-            <li><strong>Email:</strong> ${email}</li>
-            <li><strong>Country:</strong> ${country}</li>
-            <li><strong>Budget:</strong> ${budget}</li>
-            <li><strong>Family:</strong> ${family}</li>
-            <li><strong>Timeline:</strong> ${timeline}</li>
-          </ul>
-        </div>
-      `,
-    });
+    if (userError) {
+      console.error("Resend eligibility user error:", userError);
+      return NextResponse.json({ ok: false, error: userError }, { status: 500 });
+    }
 
-    return NextResponse.json({ ok: true });
-  } catch (error) {
-    console.error("Eligibility API error:", error);
+    // 2) optional internal notification (won't block user email)
+    const internalTo =
+      process.env.ELIGIBILITY_INTERNAL_EMAIL || "advisors@mail.artoncapitals.com";
+
+    if (internalTo) {
+      const { error: internalError } = await resend.emails.send({
+        from,
+        to: [internalTo],
+        subject: "New CBI Eligibility Assessment",
+        html: `
+          <div style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6;">
+            <p>A new eligibility assessment has been submitted:</p>
+            <ul>
+              <li><strong>Name:</strong> ${name}</li>
+              <li><strong>Email:</strong> ${email}</li>
+              <li><strong>Country:</strong> ${country}</li>
+              <li><strong>Budget:</strong> ${budget}</li>
+              <li><strong>Family:</strong> ${family}</li>
+              <li><strong>Timeline:</strong> ${timeline}</li>
+            </ul>
+          </div>
+        `,
+      });
+
+      if (internalError) {
+        console.error("Resend eligibility internal error:", internalError);
+        // don’t fail the whole request just because the internal mail failed
+      }
+    }
+
+    return NextResponse.json({ ok: true, id: userData?.id });
+  } catch (err) {
+    console.error("Eligibility API error:", err);
     return NextResponse.json(
-      { ok: false, error: "Server error" },
+      { ok: false, error: "Unexpected error" },
       { status: 500 }
     );
   }
