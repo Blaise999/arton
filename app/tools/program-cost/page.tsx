@@ -125,7 +125,7 @@ function getProgramHref(code: ProgramCost["code"]): string {
     case "TR":
       return "/global-citizen-programs/turkey";
     case "US":
-      return "/global-citizen-programs/usa-eb5";
+      return "/global-citizen-programs/usa-eb-5";
 
     default:
       return "#";
