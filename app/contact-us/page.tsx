@@ -9,12 +9,12 @@ export const metadata = {
   title: "Contact | Citizenship By Investment Advisors",
   description:
     "Reach our citizenship by investment advisors via email or direct WhatsApp lines.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact-us" },
   openGraph: {
     title: "Contact | Citizenship By Investment Advisors",
     description:
       "Reach our citizenship by investment advisors via email or direct WhatsApp lines.",
-    url: "/contact",
+    url: "/contact-us",
     siteName: "Arton Capital",
     images: [
       {

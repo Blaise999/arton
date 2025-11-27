@@ -173,7 +173,7 @@ export function EligibilityFormCTA() {
             Explore Programs
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="rounded-lg border border-white/20 px-4 py-2 font-semibold text-white hover:bg-white/5"
           >
             Speak with an Advisor

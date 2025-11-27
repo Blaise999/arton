@@ -255,7 +255,7 @@ export default function ProgramCostPage() {
                 Leave “0” if a dependent is not accompanying you. For more
                 complex family structures, please{" "}
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="underline text-[#b8864f] hover:text-[#d29b60]"
                 >
                   contact us

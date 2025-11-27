@@ -500,7 +500,7 @@ export default function InTheNewsPage() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="inline-flex items-center justify-center rounded-full bg-[#0B1020] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0B1020]/90"
                 >
                   Contact Media Team
@@ -587,7 +587,7 @@ export default function InTheNewsPage() {
             </p>
           </div>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="mt-2 inline-flex items-center justify-center rounded-full bg-[#0B1020] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0B1020]/90 md:mt-0"
           >
             Contact Media Team
