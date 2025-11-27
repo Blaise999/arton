@@ -119,7 +119,7 @@ function getProgramHref(code: ProgramCost["code"]): string {
     case "KN":
       return "/global-citizen-programs/st-kitts-nevis";
     case "ST":
-      return "/global-citizen-programs/sao-tome-principe";
+      return "/global-citizen-programs/sao-tome-principe-citizenship-by-investment";
     case "ES":
       return "/global-citizen-programs/spain";
     case "TR":
