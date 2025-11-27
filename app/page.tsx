@@ -786,7 +786,7 @@ function ContactWidget() {
       setOpen(true);
     } else {
       // second click actually triggers the call
-      window.location.href = "tel:+97148719700";
+      window.location.href = "tel:+13436414504";
     }
   };
 

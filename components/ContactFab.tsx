@@ -21,7 +21,7 @@ export default function ContactFab() {
       <div className="relative flex flex-col items-end gap-3">
         {/* Hidden icons slide out */}
         <a
-          href="https://wa.me/971502464484"
+          href="https://wa.me/+13436414504"
           target="_blank"
           rel="noreferrer"
           className={`transition-all duration-300 ${
