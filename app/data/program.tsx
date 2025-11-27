@@ -42,7 +42,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "3–6 months from application.",
     visaFreeTravel: "150+ countries incl. Schengen and the UK.",
     artonIndexScore: 80,
-    detailsUrl: "/programs/antigua-donation",
+    detailsUrl: "/global-citizen-programs/antigua-and-barbuda",
   },
   {
     code: "AG-RE",
@@ -63,7 +63,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "4–8 months from investment and approval.",
     visaFreeTravel: "150+ countries incl. Schengen and the UK.",
     artonIndexScore: 81,
-    detailsUrl: "/programs/antigua-real-estate",
+    detailsUrl: "/global-citizen-programs/antigua-and-barbuda",
   },
 
   // BULGARIA – FUNDS / BONDS (historic investor route)
@@ -88,7 +88,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Citizenship: 180+ countries; PR gives Schengen-style mobility when aligned.",
     artonIndexScore: 84,
-    detailsUrl: "/programs/bulgaria-funds",
+    detailsUrl: "/global-citizen-programs/bulgaria",
   },
 
   // DOMINICA
@@ -111,7 +111,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "3–6 months from approval and payment.",
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 77,
-    detailsUrl: "/programs/dominica-donation",
+    detailsUrl: "/global-citizen-programs/dominica",
   },
   {
     code: "DM-RE",
@@ -132,7 +132,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "6–9 months from investment and approval.",
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 78,
-    detailsUrl: "/programs/dominica-real-estate",
+    detailsUrl: "/global-citizen-programs/dominica",
   },
 
   // GREECE – REAL ESTATE GOLDEN VISA
@@ -158,7 +158,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with residence card; 190+ countries with Greek passport.",
     artonIndexScore: 86,
-    detailsUrl: "/programs/greece-real-estate",
+    detailsUrl: "/global-citizen-programs/greece-golden-visa-program",
   },
 
   // GRENADA
@@ -183,7 +183,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "145–150 countries incl. Schengen and China; E-2 treaty access via the USA route.",
     artonIndexScore: 79,
-    detailsUrl: "/programs/grenada-donation",
+    detailsUrl: "/global-citizen-programs/grenada",
   },
   {
     code: "GD-RE",
@@ -205,7 +205,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "4–8 months from investment and approval.",
     visaFreeTravel: "145–150 countries worldwide.",
     artonIndexScore: 80,
-    detailsUrl: "/programs/grenada-real-estate",
+    detailsUrl: "/global-citizen-programs/grenada",
   },
 
   // HUNGARY – FUND-BASED GUEST INVESTOR
@@ -231,7 +231,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with permit; 185–190 countries with Hungarian passport.",
     artonIndexScore: 85,
-    detailsUrl: "/programs/hungary-funds",
+    detailsUrl: "/global-citizen-programs/hungary",
   },
 
   // LATVIA – SHARE CAPITAL
@@ -256,7 +256,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with residence card; 185–190 countries with Latvian passport.",
     artonIndexScore: 83,
-    detailsUrl: "/programs/latvia-share-capital",
+    detailsUrl: "/global-citizen-programs/latvia",
   },
 
   // MALTA – CONTRIBUTION / DONATION COMPONENT (MEIN)
@@ -282,7 +282,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "185–190 countries including EU, UK and many other destinations.",
     artonIndexScore: 89,
-    detailsUrl: "/programs/malta-contribution",
+    detailsUrl: "/global-citizen-programs/malta",
   },
   {
     code: "MT-RE",
@@ -309,7 +309,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "185–190 countries with Maltese passport once naturalised.",
     artonIndexScore: 90,
-    detailsUrl: "/programs/malta-real-estate",
+    detailsUrl: "/global-citizen-programs/malta",
   },
 
   // PORTUGAL – DONATION / FUNDS (POST-REAL-ESTATE REFORM)
@@ -336,7 +336,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with residence card; 190+ countries with Portuguese passport.",
     artonIndexScore: 88,
-    detailsUrl: "/programs/portugal-donation",
+    detailsUrl: "/global-citizen-programs/portugal",
   },
   {
     code: "PT-F",
@@ -363,7 +363,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with residence card; 190+ countries with Portuguese passport.",
     artonIndexScore: 89,
-    detailsUrl: "/programs/portugal-funds",
+    detailsUrl: "/global-citizen-programs/portugal",
   },
 
   // QUEBEC, CANADA – IMMIGRANT INVESTOR
@@ -395,7 +395,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Canadian passport offers 185–190 visa-free countries; PR gives right to live anywhere in Canada.",
     artonIndexScore: 91,
-    detailsUrl: "/programs/quebec-investor",
+    detailsUrl: "/global-citizen-programs/canada-quebec",
   },
 
   // SAINT LUCIA
@@ -420,7 +420,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "3–6 months from approval and payment.",
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 78,
-    detailsUrl: "/programs/saint-lucia-donation",
+    detailsUrl: "/global-citizen-programs/saint-lucia",
   },
   {
     code: "LC-GB",
@@ -444,7 +444,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "3–6 months from investment and approval.",
     visaFreeTravel: "140–150 countries worldwide.",
     artonIndexScore: 79,
-    detailsUrl: "/programs/saint-lucia-bonds",
+    detailsUrl: "/global-citizen-programs/saint-lucia",
   },
 
   // SPAIN – REAL ESTATE GOLDEN VISA
@@ -473,7 +473,7 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel:
       "Schengen travel with residence card; 190+ countries with Spanish passport.",
     artonIndexScore: 90,
-    detailsUrl: "/programs/spain-real-estate",
+    detailsUrl: "/global-citizen-programs/spain",
   },
 
   // ST. KITTS & NEVIS
@@ -497,7 +497,7 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "3–6 months from contribution and approval.",
     visaFreeTravel: "155–165 countries incl. Schengen and the UK.",
     artonIndexScore: 82,
-    detailsUrl: "/programs/st-kitts-donation",
+    detailsUrl: "/global-citizen-programs/st-kitts-nevis",
   },
   {
     code: "KN-RE",
@@ -524,6 +524,6 @@ export const PROGRAMS: Program[] = [
     timeToCitizenship: "4–7 months from investment and approval.",
     visaFreeTravel: "155–165 countries, same as donation route.",
     artonIndexScore: 83,
-    detailsUrl: "/programs/st-kitts-real-estate",
+    detailsUrl: "/global-citizen-programs/st-kitts-nevis",
   },
 ];
