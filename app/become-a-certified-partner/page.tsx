@@ -601,7 +601,7 @@ export default function BecomeCertifiedPartnerPage() {
                 <p className="max-w-md text-[11px] leading-relaxed text-slate-400">
                   Protected by reCAPTCHA. Google{" "}
                   <span className="underline">Privacy Policy</span> and{" "}
-                  <span className="underline">Terms of Service</span> apply.
+                  <span className="underline">Terms of Service</span> apply
                 </p>
               </div>
             </form>
