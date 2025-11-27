@@ -332,13 +332,15 @@ export default function BecomeCertifiedPartnerPage() {
 
           {/* Form card */}
           <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-black/40 backdrop-blur sm:p-8">
+            {/* 
+              NOTE:
+              - No onSubmit handler here (this file is a Server Component).
+              - Handle the POST in an API route like /api/partner-lead.
+            */}
             <form
               className="space-y-10"
-              onSubmit={(e) => {
-                e.preventDefault();
-                // hook this up to your API (e.g. /api/partner-lead) later
-                alert("Thank you. Your details have been recorded.");
-              }}
+              method="POST"
+              action="/api/partner-lead"
             >
               {/* Name + contact */}
               <div className="grid gap-6 md:grid-cols-2">
