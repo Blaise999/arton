@@ -59,11 +59,12 @@ const faqs = [
 ];
 
 const indexStats = [
-  { label: "Cost", value: 80 },
+   { label: "Arton Index Score", value: 79 },
+  { label: "Cost", value: 15 },
   { label: "Speed", value: 15 },
-  { label: "Global mobility", value: 75 },
-  { label: "Quality of life", value: 100 },
-  { label: "Simplicity", value: 30 },
+  { label: "Global mobility", value: 20 },
+  { label: "Quality of life", value: 17 },
+  { label: "Simplicity", value: 12 },
 ];
 
 export default function GrenadaCitizenshipByInvestmentPage() {

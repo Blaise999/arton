@@ -10,12 +10,12 @@ export const metadata = {
 
 // Real Arton Index figures as per the original widget data-end values
 const ARTON_INDEX = {
-  overall: 60, // simple average of the 5 factors
-  cost: 80,
+  overall: 77, // simple average of the 5 factors
+  cost: 17,
   speed: 15,
-  globalMobility: 75,
-  qualityOfLife: 100,
-  simplicity: 30,
+  globalMobility: 15,
+  qualityOfLife: 15,
+  simplicity: 15,
 };
 
 export default function DominicaProgramPage() {

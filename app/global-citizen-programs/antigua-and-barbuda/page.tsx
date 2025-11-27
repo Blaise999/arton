@@ -313,14 +313,14 @@ function ArtonIndexCard() {
           <div className="absolute inset-6 rounded-full border-[8px] border-[#da9c5f]" />
           <div className="absolute inset-9 rounded-full border-[7px] border-[#848486]" />
           <div className="absolute inset-12 flex items-center justify-center rounded-full bg-white">
-            <span className="text-3xl font-semibold text-[#333333]">70</span>
+            <span className="text-3xl font-semibold text-[#333333]">80</span>
           </div>
         </div>
 
         <ul className="flex-1 space-y-1 text-[12px] uppercase tracking-[0.18em]">
           <li className="flex items-center justify-between text-[#777777]">
             <span>Cost</span>
-            <span className="font-semibold text-[#d09454]">16</span>
+            <span className="font-semibold text-[#d09454]">18</span>
           </li>
           <li className="flex items-center justify-between text-[#777777]">
             <span>Speed</span>
@@ -328,7 +328,7 @@ function ArtonIndexCard() {
           </li>
           <li className="flex items-center justify-between text-[#777777]">
             <span>Global Mobility</span>
-            <span className="font-semibold text-[#d09454]">14</span>
+            <span className="font-semibold text-[#d09454]">18</span>
           </li>
           <li className="flex items-center justify-between text-[#777777]">
             <span>Quality of Life</span>
@@ -336,7 +336,7 @@ function ArtonIndexCard() {
           </li>
           <li className="flex items-center justify-between text-[#777777]">
             <span>Simplicity</span>
-            <span className="font-semibold text-[#d09454]">16</span>
+            <span className="font-semibold text-[#d09454]">20</span>
           </li>
         </ul>
       </div>

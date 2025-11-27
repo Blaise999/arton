@@ -278,7 +278,7 @@ export default function HungaryInvestorVisaPage() {
                   <div className="absolute inset-12 rounded-full border-[10px] border-[#C0C1C3]" />
                   <div className="absolute inset-16 rounded-full border-[10px] border-[#E6BD9D]" />
                   <span className="relative text-3xl font-semibold text-[#3D3D3D]">
-                    0
+                    85
                   </span>
                 </div>
               </div>
@@ -289,35 +289,35 @@ export default function HungaryInvestorVisaPage() {
                     <span className="inline-block h-2 w-2 rounded-full bg-[#E6BD9D]" />
                     cost
                   </span>
-                  <strong>0</strong>
+                  <strong>20</strong>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#C0C1C3]" />
                     speed
                   </span>
-                  <strong>0</strong>
+                  <strong>20</strong>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#DA9C5F]" />
                     global mobility
                   </span>
-                  <strong>0</strong>
+                  <strong>20</strong>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#848486]" />
                     quality of life
                   </span>
-                  <strong>0</strong>
+                  <strong>10</strong>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2">
                     <span className="inline-block h-2 w-2 rounded-full bg-[#3D3D3D]" />
                     simplicity
                   </span>
-                  <strong>0</strong>
+                  <strong>15</strong>
                 </li>
               </ul>
 

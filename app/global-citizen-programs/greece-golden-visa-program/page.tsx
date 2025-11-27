@@ -51,11 +51,12 @@ const capitalOptions = [
 ];
 
 const indexStats = [
-  { label: "Cost", value: 80 },
-  { label: "Speed", value: 15 },
-  { label: "Global mobility", value: 75 },
-  { label: "Quality of life", value: 100 },
-  { label: "Simplicity", value: 30 },
+   { label: "Arton Index Score", value: 86 },
+  { label: "Cost", value: 20 },
+  { label: "Speed", value: 20 },
+  { label: "Global mobility", value: 15 },
+  { label: "Quality of life", value: 20 },
+  { label: "Simplicity", value: 11 },
 ];
 
 export default function GreeceGoldenVisaProgramPage() {
