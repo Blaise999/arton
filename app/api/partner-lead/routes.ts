@@ -1,7 +1,6 @@
+// app/api/partner-lead/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import CertifiedPartnerLeadOwnerEmail from "@/app/emails/CertifiedPartnerLeadOwnerEmail";
-import CertifiedPartnerLeadAutoReply from "@/app/emails/CertifiedPartnerLeadAutoReply";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -15,22 +14,24 @@ const FROM_EMAIL =
 
 export async function POST(req: NextRequest) {
   try {
-    const formData = await req.formData();
+    const contentType = req.headers.get("content-type") || "";
+    let body: Record<string, any> = {};
 
-    const get = (key: string) =>
-      (formData.get(key)?.toString().trim() as string | undefined) || "";
-    const getAll = (key: string) =>
-      formData
-        .getAll(key)
-        .map((v) => v.toString().trim())
-        .filter(Boolean);
+    if (contentType.includes("application/json")) {
+      body = (await req.json()) ?? {};
+    } else {
+      // handles x-www-form-urlencoded & multipart/form-data
+      const formData = await req.formData();
+      formData.forEach((value, key) => {
+        body[key] = value.toString();
+      });
+    }
 
-    const fname = get("fname");
-    const lastname = get("lastname");
-    const email = get("email");
+    const fname = (body.fname as string | undefined)?.trim();
+    const lastname = (body.lastname as string | undefined)?.trim();
+    const email = (body.email as string | undefined)?.trim();
 
     if (!fname || !email) {
-      // Shouldn't really happen because of HTML required=, but just in case
       return NextResponse.json(
         { ok: false, error: "Missing first name or email." },
         { status: 400 }
@@ -39,38 +40,19 @@ export async function POST(req: NextRequest) {
 
     const fullName = [fname, lastname].filter(Boolean).join(" ");
 
-    // Collect all fields nicely for the admin email
-    const fields = [
-      { label: "First name", value: fname },
-      { label: "Last name", value: lastname },
-      { label: "Email", value: email },
-      { label: "Phone", value: get("phone") },
-      { label: "Country of activity", value: get("country_activity") },
-      {
-        label: "Target market(s)",
-        value: getAll("target_markets").join(", "),
-      },
-      { label: "Preferred contact method", value: get("contact") },
-      { label: "Are you", value: get("are_you") },
-      { label: "Company", value: get("company") },
-      { label: "Program of interest", value: get("program_of_interest") },
-      {
-        label: "Existing clients in other programs",
-        value: get("existing_clients"),
-      },
-      { label: "Questions / comments", value: get("questions") },
-    ];
+    // Build a simple text body dumping all fields (like global-citizen-lead)
+    const textBody =
+      `New Certified Partner lead from ${fullName}:\n\n` +
+      Object.entries(body)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join("\n");
 
-    // 1) Email to YOU (admin / internal)
+    // 1) Email to YOU (all form data)
     await resend.emails.send({
       from: FROM_EMAIL,
       to: OWNER_EMAIL,
       subject: `New Certified Partner lead from ${fullName}`,
-      react: CertifiedPartnerLeadOwnerEmail({
-        fullName,
-        email,
-        fields,
-      }),
+      text: textBody,
     });
 
     // 2) Auto-reply to the partner
@@ -78,12 +60,37 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: email,
       subject: "We received your Certified Partner inquiry – Arton Capital",
-      react: CertifiedPartnerLeadAutoReply({
-        fname,
-      }),
+      html: `
+        <p>Dear ${fname},</p>
+        <p>
+          Thank you for your interest in becoming a Certified Partner of Arton Capital.
+        </p>
+        <p>
+          One of our team members will carefully review your information and
+          contact you within 24 hours to discuss how we can work together.
+        </p>
+        <p>
+          In the meantime, if you have any urgent questions, you can reply
+          directly to this email.
+        </p>
+        <p>Warm regards,<br/>Arton Capital Team</p>
+      `,
+      text: `
+Dear ${fname},
+
+Thank you for your interest in becoming a Certified Partner of Arton Capital.
+
+One of our team members will carefully review your information and contact you
+within 24 hours to discuss how we can work together.
+
+In the meantime, if you have any urgent questions, you can reply directly to
+this email.
+
+Warm regards,
+Arton Capital Team
+      `.trim(),
     });
 
-    // JSON success response for the client-side form
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Error in /api/partner-lead:", error);
