@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Where you receive new leads
 const OWNER_EMAIL =
-  process.env.CONTACT_RECIPIENT_EMAIL || "blaiseidoko@gmail.com";
+  process.env.CONTACT_RECIPIENT_EMAIL || "Danielhenry697@gmail.com";
 
 // From address configured in Resend (domain must be verified)
 const FROM_EMAIL =
