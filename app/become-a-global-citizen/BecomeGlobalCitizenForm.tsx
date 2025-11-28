@@ -14,25 +14,53 @@ export function BecomeGlobalCitizenForm({
   countries,
   programs,
 }: Props) {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
+
     const fname = (formData.get("fname") as string | null)?.trim() ?? "";
     const email = (formData.get("email") as string | null)?.trim() ?? "";
 
-    // TODO: replace this with a real API call later, e.g.:
-    // await fetch("/api/global-citizen-lead", { method: "POST", body: formData });
-    if (fname && email) {
-      alert(`Thank you, ${fname}. We will reach out to you at ${email}.`);
-    } else if (email) {
-      alert(`Thank you. We will reach out to you at ${email}.`);
-    } else {
-      alert("Thank you. Your details have been recorded.");
-    }
+    try {
+      // Send everything to your API as JSON
+      const res = await fetch("/api/global-citizen-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
+      });
 
-    // Optional: reset the form after submit
-    // e.currentTarget.reset();
+      const data = await res.json().catch(() => ({} as any));
+
+      if (!res.ok || !data.ok) {
+        console.error("Error from /api/global-citizen-lead:", data);
+        alert(
+          data?.error ||
+            "Something went wrong while sending your request. Please try again."
+        );
+        return;
+      }
+
+      // Same UX you had before
+      if (fname && email) {
+        alert(`Thank you, ${fname}. We will reach out to you at ${email}.`);
+      } else if (email) {
+        alert(`Thank you. We will reach out to you at ${email}.`);
+      } else {
+        alert("Thank you. Your details have been recorded.");
+      }
+
+      // Reset form on success
+      formEl.reset();
+    } catch (err) {
+      console.error("Network error calling /api/global-citizen-lead:", err);
+      alert(
+        "We couldn't submit your request due to a network error. Please check your connection and try again."
+      );
+    }
   }
 
   return (
@@ -205,8 +233,8 @@ export function BecomeGlobalCitizenForm({
         {/* Managerial proof */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           <label className="block text-sm font-medium">
-            Can you prove managerial experience of 2 years for the past 5 years?{" "}
-            <span className="text-red-600">*</span>
+            Can you prove managerial experience of 2 years for the past 5
+            years? <span className="text-red-600">*</span>
           </label>
           <div className="flex gap-4 pt-1">
             {["Yes", "No"].map((v) => (

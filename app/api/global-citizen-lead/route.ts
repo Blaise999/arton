@@ -14,7 +14,18 @@ const FROM_EMAIL =
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const contentType = req.headers.get("content-type") || "";
+    let body: Record<string, any> = {};
+
+    if (contentType.includes("application/json")) {
+      body = (await req.json()) ?? {};
+    } else {
+      // handles x-www-form-urlencoded & multipart/form-data
+      const formData = await req.formData();
+      formData.forEach((value, key) => {
+        body[key] = value.toString();
+      });
+    }
 
     const fname = (body.fname as string | undefined)?.trim();
     const lastname = (body.lastname as string | undefined)?.trim();
@@ -34,7 +45,6 @@ export async function POST(req: NextRequest) {
       from: FROM_EMAIL,
       to: OWNER_EMAIL,
       subject: `New Global Citizen lead from ${fullName}`,
-      // Simple text body with all fields
       text:
         `New lead from Become a Global Citizen form:\n\n` +
         Object.entries(body)
