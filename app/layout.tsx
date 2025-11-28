@@ -6,12 +6,7 @@ import "keen-slider/keen-slider.min.css";
 
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-
-// your language context provider (client component)
-import { LanguageProvider } from "@app/src/i18n/LanguageContext";
-
-// (optional) if you’re using the Google translate loader we discussed
-// import { GoogleTranslateLoader } from "@/components/GoogleTranslate";
+import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,17 +26,14 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-slate-50 text-slate-900 antialiased`}
       >
-        {/* 🔑 wrap the entire UI in LanguageProvider */}
-        <LanguageProvider>
-          {/* If you’re using GoogleTranslateLoader, keep it inside the provider too */}
-          {/* <GoogleTranslateLoader /> */}
+        {/* 🔑 Load Google Translate once for the whole app */}
+        <GoogleTranslateLoader />
 
-          <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-          </div>
-        </LanguageProvider>
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );
