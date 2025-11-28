@@ -12,7 +12,6 @@ import {
 
 // ⬇️ Hero slider (ACCESS / FREEDOM / SECURITY / OPPORTUNITY / FUTURE)
 import { HeroSlider } from "@/components/hero-slider";
-import { useLanguage } from "@app/src/i18n/LanguageContext";
 
 /* -------------------------------------------------------------------------- */
 /*                               News slider data                             */
@@ -90,7 +89,6 @@ const NEWS_ITEMS: NewsItem[] = [
 /* -------------------------------------------------------------------------- */
 
 function NewsSlider() {
-  const { t } = useLanguage();
   const [groupIndex, setGroupIndex] = useState(0);
   const itemsPerGroup = 3;
 
@@ -118,7 +116,7 @@ function NewsSlider() {
         <button
           type="button"
           onClick={prev}
-          aria-label={t("home_news_prev_aria")}
+          aria-label="Previous news"
           className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-white/70 transition hover:border-white hover:text-white"
         >
           <ChevronLeft className="h-5 w-5" />
@@ -147,7 +145,7 @@ function NewsSlider() {
                       </div>
                     </div>
 
-                    {/* Headline – plain text */}
+                    {/* Headline – now plain text, NOT clickable */}
                     <h3 className="max-w-xs text-[0.8rem] text-neutral-200 md:max-w-sm md:text-sm">
                       {item.title}
                     </h3>
@@ -166,7 +164,7 @@ function NewsSlider() {
             rel="noreferrer"
             className="hover:underline"
           >
-            {t("home_news_see_more")}
+            See more
           </Link>
         </div>
 
@@ -174,7 +172,7 @@ function NewsSlider() {
         <button
           type="button"
           onClick={next}
-          aria-label={t("home_news_next_aria")}
+          aria-label="Next news"
           className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-white/70 transition hover:border-white hover:text-white"
         >
           <ChevronRight className="h-5 w-5" />
@@ -189,8 +187,6 @@ function NewsSlider() {
 /* -------------------------------------------------------------------------- */
 
 function GlobalCitizenSection() {
-  const { t } = useLanguage();
-
   return (
     <section className="relative bg-[url('/Pics/sky.jpg')] bg-cover bg-center">
       {/* very light overlay to keep contrast but still look like the screenshot */}
@@ -198,15 +194,15 @@ function GlobalCitizenSection() {
       {/* smaller vertical padding */}
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-10 text-center md:py-14">
         <h2 className="text-[1.25rem] md:text-[1.7rem] lg:text-[1.9rem] font-semibold tracking-[0.32em] uppercase text-white">
-          {t("home_become_global_title")}
+          BECOME A GLOBAL CITIZEN®
         </h2>
 
         <div className="mt-5 space-y-1 text-white">
           <p className="text-[0.9rem] md:text-[1.02rem] lg:text-[1.08rem] font-serif italic leading-relaxed">
-            {t("home_become_global_line1")}
+            Discover the power of a second citizenship.
           </p>
           <p className="text-[0.9rem] md:text-[1.02rem] lg:text-[1.08rem] font-serif italic leading-relaxed">
-            {t("home_become_global_line2")}
+            Live the life you were destined to live.
           </p>
         </div>
       </div>
@@ -219,8 +215,6 @@ function GlobalCitizenSection() {
 /* -------------------------------------------------------------------------- */
 
 function AudienceStrip() {
-  const { t } = useLanguage();
-
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:pb-20 md:pt-12">
@@ -231,10 +225,13 @@ function AudienceStrip() {
           {/* HIGH NET WORTH INVESTORS */}
           <div className="border-t border-slate-200 pt-6">
             <h3 className="text-[0.95rem] md:text-[1.05rem] font-semibold tracking-[0.18em] text-slate-600 uppercase">
-              {t("home_audience_hnwi_title")}
+              HIGH NET WORTH INVESTORS
             </h3>
             <p className="mt-5 text-[0.9rem] leading-relaxed text-slate-500">
-              {t("home_audience_hnwi_body")}
+              Arton empowers high net worth individuals and families to become
+              global citizens by investing in a second residence or citizenship
+              and helps transform their dreams into reality through highly
+              personalized products and services.
             </p>
 
             <small className="mt-6 block text-[0.9rem] text-[#c7833a]">
@@ -242,12 +239,8 @@ function AudienceStrip() {
                 href="/high-net-worth-investors"
                 className="inline-block space-y-0.5"
               >
-                <span className="block italic">
-                  {t("home_audience_hnwi_cta1")}
-                </span>
-                <span className="block italic">
-                  {t("home_audience_hnwi_cta2")}
-                </span>
+                <span className="block italic">Become a Global Citizen.</span>
+                <span className="block italic">Realize your potential.</span>
               </Link>
             </small>
           </div>
@@ -255,10 +248,14 @@ function AudienceStrip() {
           {/* CERTIFIED PARTNERS */}
           <div className="border-t border-slate-200 pt-6">
             <h3 className="text-[0.95rem] md:text-[1.05rem] font-semibold tracking-[0.18em] text-slate-600 uppercase">
-              {t("home_audience_partners_title")}
+              CERTIFIED PARTNERS
             </h3>
             <p className="mt-5 text-[0.9rem] leading-relaxed text-slate-500">
-              {t("home_audience_partners_body")}
+              Arton endows its Certified Partner network with tools, services
+              and training to deliver the best possible experience to clients
+              seeking to invest in second residence or citizenship. Arton&apos;s
+              partners are able to advise clients on virtually any matter in any
+              jurisdiction around the world.
             </p>
 
             <small className="mt-6 block text-[0.9rem] text-[#c7833a]">
@@ -267,11 +264,9 @@ function AudienceStrip() {
                 className="inline-block space-y-0.5"
               >
                 <span className="block italic">
-                  {t("home_audience_partners_cta1")}
+                  Become a Certified Partner.
                 </span>
-                <span className="block italic">
-                  {t("home_audience_partners_cta2")}
-                </span>
+                <span className="block italic">Discover the benefits.</span>
               </Link>
             </small>
           </div>
@@ -279,10 +274,13 @@ function AudienceStrip() {
           {/* GOVERNMENT AGENCIES */}
           <div className="border-t border-slate-200 pt-6">
             <h3 className="text-[0.95rem] md:text-[1.05rem] font-semibold tracking-[0.18em] text-slate-600 uppercase">
-              {t("home_audience_government_title")}
+              GOVERNMENT AGENCIES
             </h3>
             <p className="mt-5 text-[0.9rem] leading-relaxed text-slate-500">
-              {t("home_audience_government_body")}
+              Arton enables government agencies as trusted partners in
+              designing, developing, implementing and running investor programs
+              for residence and citizenship to help boost foreign investments in
+              their countries.
             </p>
 
             <small className="mt-6 block text-[0.9rem] text-[#c7833a]">
@@ -291,10 +289,10 @@ function AudienceStrip() {
                 className="inline-block space-y-0.5"
               >
                 <span className="block italic">
-                  {t("home_audience_government_cta1")}
+                  Become a Sovereign Partner.
                 </span>
                 <span className="block italic">
-                  {t("home_audience_government_cta2")}
+                  Boost your country’s foreign investments.
                 </span>
               </Link>
             </small>
@@ -399,7 +397,6 @@ const PROGRAMS: Program[] = [
 ];
 
 function GlobalProgramsTile() {
-  const { t } = useLanguage();
   const [index, setIndex] = useState(0);
   const current = PROGRAMS[index];
 
@@ -414,14 +411,14 @@ function GlobalProgramsTile() {
         {/* Background image */}
         <img
           src="https://www.artoncapital.com/wp-content/uploads/2013/12/Global-Citizen-Programs.jpg"
-          alt={t("home_programs_tile_alt")}
+          alt="Global Citizen Programs"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         />
 
         {/* Default bottom bar (hidden on hover) */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-black/75 py-4 text-center transition-opacity duration-300 group-hover:opacity-0">
           <span className="px-4 text-[0.9rem] font-semibold tracking-[0.18em] text-white md:text-[1.05rem]">
-            {t("home_programs_tile_title")}
+            GLOBAL CITIZEN PROGRAMS
           </span>
         </div>
 
@@ -432,7 +429,6 @@ function GlobalProgramsTile() {
             <button
               type="button"
               onClick={prev}
-              aria-label={t("home_programs_prev_aria")}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 text-white/80 hover:border-white hover:text-white"
             >
               <ChevronLeft className="h-4 w-4" />
@@ -461,7 +457,7 @@ function GlobalProgramsTile() {
                 href={current.href}
                 className="mt-3 inline-block text-[0.75rem] font-medium uppercase tracking-[0.14em] text-[#f4b26a] hover:text-[#ffd19a]"
               >
-                {t("home_programs_discover_more")}
+                Discover More
               </Link>
             </div>
 
@@ -469,7 +465,6 @@ function GlobalProgramsTile() {
             <button
               type="button"
               onClick={next}
-              aria-label={t("home_programs_next_aria")}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 text-white/80 hover:border-white hover:text-white"
             >
               <ChevronRight className="h-4 w-4" />
@@ -486,8 +481,6 @@ function GlobalProgramsTile() {
 /* -------------------------------------------------------------------------- */
 
 function GlobalExperiencesRow() {
-  const { t } = useLanguage();
-
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-6xl px-4 pb-16">
@@ -514,7 +507,7 @@ function GlobalExperiencesRow() {
                       rel="noreferrer"
                       className="hover:underline"
                     >
-                      {t("home_forum_title")}
+                      GLOBAL CITIZEN FORUM
                     </Link>
                   </h2>
                   <span className="mt-1 inline-block h-px w-10 bg-white/70" />
@@ -540,7 +533,7 @@ function GlobalExperiencesRow() {
                       rel="noreferrer"
                       className="hover:underline"
                     >
-                      {t("home_above_beyond_title")}
+                      ABOVE+BEYOND
                     </Link>
                   </h2>
                   <span className="mt-1 inline-block h-px w-10 bg-white/70" />
@@ -597,7 +590,6 @@ const VIDEO_ITEMS: VideoItem[] = [
 ];
 
 function VideoTile({ item }: { item: VideoItem }) {
-  const { t } = useLanguage();
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -617,7 +609,7 @@ function VideoTile({ item }: { item: VideoItem }) {
                 />
                 <button
                   type="button"
-                  aria-label={t("home_video_aria_prefix") + " " + item.alt}
+                  aria-label={item.label}
                   title={item.label}
                   onClick={() => setPlaying(true)}
                   className="video-play-button absolute inset-0 flex items-center justify-center"
@@ -773,7 +765,6 @@ function MagazineRow() {
 /* -------------------------------------------------------------------------- */
 
 function ContactWidget() {
-  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -809,7 +800,7 @@ function ContactWidget() {
         <>
           <a
             href="https://artoncapitals.com/contact-us/"
-            title={t("home_contact_email_title")}
+            title="Email"
             className="contact-icon flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg transition hover:bg-slate-100"
           >
             <Mail className="h-5 w-5" />
@@ -819,8 +810,8 @@ function ContactWidget() {
             href="https://wa.me/971502464484"
             target="_blank"
             rel="noreferrer"
-            title={t("home_contact_whatsapp_title")}
-            className="contact-icon flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:bg[#33df73]"
+            title="WhatsApp"
+            className="contact-icon flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:bg-[#33df73]"
           >
             <MessageCircle className="h-5 w-5" />
           </a>
@@ -831,7 +822,7 @@ function ContactWidget() {
       <button
         type="button"
         onClick={handleCallClick}
-        title={t("home_contact_call_title")}
+        title="Call us"
         className="contact-icon main-icon flex h-16 w-16 items-center justify-center rounded-full bg-[#d8a163] text-white shadow-xl transition hover:bg-[#e4af71]"
       >
         <Phone className="h-7 w-7" />
