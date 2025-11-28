@@ -161,7 +161,7 @@ const FOOTER_SECTIONS: {
       "PORTUGAL",
       "SAINT LUCIA",
       "ST. KITTS & NEVIS",
-      "SÃO TOMÉ AND PRÍNCIPE",
+      "SÃO TOMÉ AND PRÍНCIPE",
       "SPAIN",
       "UNITED KINGDOM",
       "USA EB-5",
@@ -169,9 +169,7 @@ const FOOTER_SECTIONS: {
       label:
         label === "OVERVIEW"
           ? "Overview"
-          : label
-              .toLowerCase()
-              .replace(/\b\w/g, (m) => m.toUpperCase()),
+          : label.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase()),
       href: resolveHref("PROGRAMS", label),
     })),
   },
@@ -189,9 +187,7 @@ const FOOTER_SECTIONS: {
       label:
         label === "PASSPORTINDEX™"
           ? "PassportIndex™"
-          : label
-              .toLowerCase()
-              .replace(/\b\w/g, (m) => m.toUpperCase()),
+          : label.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase()),
       href: resolveHref("TOOLS", label),
     })),
   },
@@ -210,9 +206,7 @@ const FOOTER_SECTIONS: {
       label:
         label === "NEWSROOM"
           ? "Industry News"
-          : label
-              .toLowerCase()
-              .replace(/\b\w/g, (m) => m.toUpperCase()),
+          : label.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase()),
       href: resolveHref("MEDIA", label),
     })),
   },
@@ -233,9 +227,7 @@ const FOOTER_SECTIONS: {
       label:
         label === "ABOUT ARTON CAPITAL"
           ? "About Arton"
-          : label
-              .toLowerCase()
-              .replace(/\b\w/g, (m) => m.toUpperCase()),
+          : label.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase()),
       href: resolveHref("ARTON CAPITAL", label),
     })),
   },
@@ -252,9 +244,7 @@ const FOOTER_SECTIONS: {
       label:
         label === "BECOME A GLOBAL CITIZEN®"
           ? "Become a Global Citizen®"
-          : label
-              .toLowerCase()
-              .replace(/\b\w/g, (m) => m.toUpperCase()),
+          : label.toLowerCase().replace(/\b\w/g, (m) => m.toUpperCase()),
       href: resolveHref("CONTACT US", label),
     })),
   },
@@ -262,6 +252,29 @@ const FOOTER_SECTIONS: {
 
 // order of languages in the pill row
 const LANGUAGE_ORDER: SupportedLang[] = ["en", "zh", "vi", "ru"];
+
+/**
+ * Tell Google Website Translate to switch language.
+ * Requires the GoogleTranslateLoader in layout (which injects .goog-te-combo).
+ */
+function triggerGoogleTranslate(lang: SupportedLang) {
+  if (typeof document === "undefined") return;
+  const combo = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+  if (!combo) {
+    // Google script not ready yet, just ignore
+    return;
+  }
+
+  const googleCodeMap: Record<SupportedLang, string> = {
+    en: "",      // back to original
+    zh: "zh-CN", // Chinese
+    vi: "vi",    // Vietnamese
+    ru: "ru",    // Russian
+  };
+
+  combo.value = googleCodeMap[lang] ?? "";
+  combo.dispatchEvent(new Event("change"));
+}
 
 export function SiteFooter() {
   const { lang, setLang, t } = useLanguage();
@@ -362,7 +375,10 @@ export function SiteFooter() {
                 <button
                   key={code}
                   type="button"
-                  onClick={() => setLang(code)}
+                  onClick={() => {
+                    setLang(code);              // internal context
+                    triggerGoogleTranslate(code); // global page translate
+                  }}
                   className={[
                     "rounded-full px-3 py-1 border transition-colors",
                     active
@@ -409,7 +425,6 @@ export function SiteFooter() {
                   );
                 })}
 
-                {/* small extra line you had in Contact, now translatable */}
                 {section.title === "Contact Us" && (
                   <span className="mt-2 text-[0.7rem] text-slate-500">
                     {t("footer_contact_tagline") ||
