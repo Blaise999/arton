@@ -1,6 +1,10 @@
 // data/programs.ts
 
-export interface Program {
+export type ContributionType = "donation" | "bonds" | "funds" | "real-estate";
+
+export type MobilityRegion = "Canada" | "Europe" | "USA";
+
+export interface ProgramMatchProfile {
   code: string; // e.g. "AG-D"
   label: string; // "Antigua & Barbuda – Donation"
   countryCode: string; // "AG"
@@ -17,11 +21,25 @@ export interface Program {
   requiredPhysicalResidence: string;
   timeToCitizenship: string;
   visaFreeTravel: string;
-  artonIndexScore: number; // illustrative score / index
+  artonIndexScore: number; // Arton-style score / index
   detailsUrl: string;
+
+  // ---------- Program Match fields ----------
+  minNetWorth: number; // numeric lower bound for net worth
+  minContribution: number; // numeric lower bound for main contribution
+  contributionTypes: ContributionType[];
+  allowsFinancing: boolean;
+  speedScore: 0 | 1 | 2; // 0 = slow, 1 = medium, 2 = very fast
+  requiresRelocation: boolean;
+  mobilityRegions: MobilityRegion[];
+  simplicityScore: 0 | 1 | 2; // 0 = complex, 1 = moderate, 2 = simple
+  qualityOfLifeScore: 0 | 1 | 2; // rough quality-of-life band
 }
 
-export const PROGRAMS: Program[] = [
+// Backwards compat alias if you still import Program somewhere else
+export type Program = ProgramMatchProfile;
+
+export const PROGRAMS: ProgramMatchProfile[] = [
   // ANTIGUA & BARBUDA
   {
     code: "AG-D",
@@ -43,6 +61,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "150+ countries incl. Schengen and the UK.",
     artonIndexScore: 80,
     detailsUrl: "/global-citizen-programs/antigua-and-barbuda",
+    // Program Match
+    minNetWorth: 1_000_000,
+    minContribution: 230_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: true,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 2,
+    qualityOfLifeScore: 1,
   },
   {
     code: "AG-RE",
@@ -64,6 +92,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "150+ countries incl. Schengen and the UK.",
     artonIndexScore: 81,
     detailsUrl: "/global-citizen-programs/antigua-and-barbuda",
+    // Program Match
+    minNetWorth: 1_000_000,
+    minContribution: 200_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // BULGARIA – FUNDS / BONDS (historic investor route)
@@ -89,6 +127,16 @@ export const PROGRAMS: Program[] = [
       "Citizenship: 180+ countries; PR gives Schengen-style mobility when aligned.",
     artonIndexScore: 84,
     detailsUrl: "/global-citizen-programs/bulgaria",
+    // Program Match
+    minNetWorth: 1_000_000,
+    minContribution: 512_000,
+    contributionTypes: ["bonds", "funds"],
+    allowsFinancing: true,
+    speedScore: 1,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 0,
+    qualityOfLifeScore: 1,
   },
 
   // DOMINICA
@@ -112,6 +160,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 77,
     detailsUrl: "/global-citizen-programs/dominica",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 100_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 2,
+    qualityOfLifeScore: 1,
   },
   {
     code: "DM-RE",
@@ -133,6 +191,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 78,
     detailsUrl: "/global-citizen-programs/dominica",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 200_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // GREECE – REAL ESTATE GOLDEN VISA
@@ -159,6 +227,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with residence card; 190+ countries with Greek passport.",
     artonIndexScore: 86,
     detailsUrl: "/global-citizen-programs/greece-golden-visa-program",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 250_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
 
   // GRENADA
@@ -184,6 +262,16 @@ export const PROGRAMS: Program[] = [
       "145–150 countries incl. Schengen and China; E-2 treaty access via the USA route.",
     artonIndexScore: 79,
     detailsUrl: "/global-citizen-programs/grenada",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 150_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe", "USA"],
+    simplicityScore: 2,
+    qualityOfLifeScore: 1,
   },
   {
     code: "GD-RE",
@@ -206,6 +294,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "145–150 countries worldwide.",
     artonIndexScore: 80,
     detailsUrl: "/global-citizen-programs/grenada",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 220_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe", "USA"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // HUNGARY – FUND-BASED GUEST INVESTOR
@@ -232,6 +330,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with permit; 185–190 countries with Hungarian passport.",
     artonIndexScore: 85,
     detailsUrl: "/global-citizen-programs/hungary",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 250_000,
+    contributionTypes: ["funds"],
+    allowsFinancing: true,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // LATVIA – SHARE CAPITAL
@@ -257,6 +365,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with residence card; 185–190 countries with Latvian passport.",
     artonIndexScore: 83,
     detailsUrl: "/global-citizen-programs/latvia",
+    // Program Match
+    minNetWorth: 100_000,
+    minContribution: 50_000,
+    contributionTypes: ["funds"],
+    allowsFinancing: false,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // MALTA – CONTRIBUTION / DONATION COMPONENT (MEIN)
@@ -283,6 +401,16 @@ export const PROGRAMS: Program[] = [
       "185–190 countries including EU, UK and many other destinations.",
     artonIndexScore: 89,
     detailsUrl: "/global-citizen-programs/malta",
+    // Program Match
+    minNetWorth: 1_500_000,
+    minContribution: 600_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 1,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
   {
     code: "MT-RE",
@@ -310,6 +438,16 @@ export const PROGRAMS: Program[] = [
       "185–190 countries with Maltese passport once naturalised.",
     artonIndexScore: 90,
     detailsUrl: "/global-citizen-programs/malta",
+    // Program Match
+    minNetWorth: 1_500_000,
+    minContribution: 700_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 1,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
 
   // PORTUGAL – DONATION / FUNDS (POST-REAL-ESTATE REFORM)
@@ -337,6 +475,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with residence card; 190+ countries with Portuguese passport.",
     artonIndexScore: 88,
     detailsUrl: "/global-citizen-programs/portugal",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 250_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
   {
     code: "PT-F",
@@ -364,6 +512,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with residence card; 190+ countries with Portuguese passport.",
     artonIndexScore: 89,
     detailsUrl: "/global-citizen-programs/portugal",
+    // Program Match
+    minNetWorth: 1_000_000,
+    minContribution: 500_000,
+    contributionTypes: ["funds"],
+    allowsFinancing: false,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
 
   // QUEBEC, CANADA – IMMIGRANT INVESTOR
@@ -396,6 +554,16 @@ export const PROGRAMS: Program[] = [
       "Canadian passport offers 185–190 visa-free countries; PR gives right to live anywhere in Canada.",
     artonIndexScore: 91,
     detailsUrl: "/global-citizen-programs/canada-quebec",
+    // Program Match
+    minNetWorth: 2_000_000,
+    minContribution: 1_200_000,
+    contributionTypes: ["bonds"],
+    allowsFinancing: true,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Canada", "USA", "Europe"],
+    simplicityScore: 0,
+    qualityOfLifeScore: 2,
   },
 
   // SAINT LUCIA
@@ -421,6 +589,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "140–150 countries incl. Schengen and the UK.",
     artonIndexScore: 78,
     detailsUrl: "/global-citizen-programs/saint-lucia",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 100_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 2,
+    qualityOfLifeScore: 1,
   },
   {
     code: "LC-GB",
@@ -445,6 +623,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "140–150 countries worldwide.",
     artonIndexScore: 79,
     detailsUrl: "/global-citizen-programs/saint-lucia",
+    // Program Match
+    minNetWorth: 300_000,
+    minContribution: 300_000,
+    contributionTypes: ["bonds"],
+    allowsFinancing: false,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 
   // SPAIN – REAL ESTATE GOLDEN VISA
@@ -474,6 +662,16 @@ export const PROGRAMS: Program[] = [
       "Schengen travel with residence card; 190+ countries with Spanish passport.",
     artonIndexScore: 90,
     detailsUrl: "/global-citizen-programs/spain",
+    // Program Match
+    minNetWorth: 700_000,
+    minContribution: 500_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 0,
+    requiresRelocation: true,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 2,
   },
 
   // ST. KITTS & NEVIS
@@ -498,6 +696,16 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "155–165 countries incl. Schengen and the UK.",
     artonIndexScore: 82,
     detailsUrl: "/global-citizen-programs/st-kitts-nevis",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 250_000,
+    contributionTypes: ["donation"],
+    allowsFinancing: false,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 2,
+    qualityOfLifeScore: 1,
   },
   {
     code: "KN-RE",
@@ -525,5 +733,15 @@ export const PROGRAMS: Program[] = [
     visaFreeTravel: "155–165 countries, same as donation route.",
     artonIndexScore: 83,
     detailsUrl: "/global-citizen-programs/st-kitts-nevis",
+    // Program Match
+    minNetWorth: 500_000,
+    minContribution: 400_000,
+    contributionTypes: ["real-estate"],
+    allowsFinancing: true,
+    speedScore: 2,
+    requiresRelocation: false,
+    mobilityRegions: ["Europe"],
+    simplicityScore: 1,
+    qualityOfLifeScore: 1,
   },
 ];

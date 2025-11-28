@@ -2,14 +2,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { ChangeEvent, ReactNode } from "react";
 import Link from "next/link";
+
 import {
   ContributionType,
   MobilityRegion,
   ProgramMatchProfile,
-} from "@data/programMatch";
+  PROGRAMS,
+} from "@data/program";
 
-import { PROGRAM_MATCH_PROFILES } from "@/app/data/tools-catalog-sync";
 const SLIDER_MIN = 0;
 const SLIDER_MAX = 38;
 
@@ -177,7 +179,7 @@ function ProgramMatchClient() {
   );
 
   const bestMatches = useMemo(() => {
-    const scored = PROGRAM_MATCH_PROFILES.map((p) => ({
+    const scored = PROGRAMS.map((p) => ({
       profile: p,
       score: scoreProgram(p, filters),
     }));
@@ -188,7 +190,7 @@ function ProgramMatchClient() {
 
   const handleSliderChange =
     (field: "netWorthSlider" | "contributionSlider") =>
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: ChangeEvent<HTMLInputElement>) => {
       const value = Number(e.target.value);
       setFilters((prev) => ({ ...prev, [field]: value }));
     };
@@ -553,7 +555,7 @@ function QuestionRow({
   icon: string | null;
   title: string;
   subtitle: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="grid gap-4 border-b border-slate-200 pb-6 last:border-b-0 last:pb-0 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
@@ -596,7 +598,7 @@ function SliderField({
   min: number;
   max: number;
   value: number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   label: string;
 }) {
   return (
