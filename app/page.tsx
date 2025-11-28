@@ -807,7 +807,7 @@ function ContactWidget() {
           </a>
 
           <a
-            href="https://wa.me/971502464484"
+            href="https://artoncapitals.com/contact-us/"
             target="_blank"
             rel="noreferrer"
             title="WhatsApp"
