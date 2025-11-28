@@ -1,5 +1,9 @@
 // components/site-footer.tsx
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@app/src/i18n/LanguageContext";
+import { LANG_LABELS, type SupportedLang } from "@app/src/i18n/dictionary";
 
 /**
  * Same routing approach as SiteHeader:
@@ -256,7 +260,12 @@ const FOOTER_SECTIONS: {
   },
 ];
 
+// order of languages in the pill row
+const LANGUAGE_ORDER: SupportedLang[] = ["en", "zh", "vi", "ru"];
+
 export function SiteFooter() {
+  const { lang, setLang, t } = useLanguage();
+
   return (
     <footer className="border-t border-slate-800 bg-slate-950 text-slate-200">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-14 space-y-10">
@@ -264,16 +273,20 @@ export function SiteFooter() {
         <div className="grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] md:items-center">
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-300">
-              Empowering Global Citizenship
-              <span className="align-top text-[0.6rem]">®</span>
+              {t("footer_tagline_title") || (
+                <>
+                  Empowering Global Citizenship
+                  <span className="align-top text-[0.6rem]">®</span>
+                </>
+              )}
             </p>
             <h3 className="text-lg font-semibold tracking-tight text-slate-50 md:text-xl">
-              Mobility, security, opportunity — structured for generations.
+              {t("footer_tagline_body") ||
+                "Mobility, security, opportunity — structured for generations."}
             </h3>
             <p className="max-w-xl text-sm text-slate-400">
-              Artsoncapital helps investors, partners, and governments design
-              compliant, investment-led residency and citizenship strategies in
-              key jurisdictions worldwide.
+              {t("footer_tagline_desc") ||
+                "Artsoncapital helps investors, partners, and governments design compliant, investment-led residency and citizenship strategies in key jurisdictions worldwide."}
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
@@ -281,14 +294,16 @@ export function SiteFooter() {
                 href={resolveHref("CONTACT US", "BECOME A GLOBAL CITIZEN®")}
                 className="inline-flex items-center rounded-full bg-amber-500 px-4 py-2 text-xs font-medium text-slate-950 hover:bg-amber-400"
               >
-                Become a Global Citizen<span className="ml-1">®</span>
+                {t("footer_cta_global_citizen") || "Become a Global Citizen"}
+                <span className="ml-1">®</span>
               </Link>
 
               <Link
                 href={resolveHref("CONTACT US", "BECOME A CERTIFIED PARTNER")}
                 className="inline-flex items-center rounded-full border border-amber-500/60 px-4 py-2 text-xs font-medium text-amber-300 hover:border-amber-400 hover:text-amber-200"
               >
-                Become a Certified Partner
+                {t("footer_cta_certified_partner") ||
+                  "Become a Certified Partner"}
               </Link>
             </div>
           </div>
@@ -296,11 +311,11 @@ export function SiteFooter() {
           {/* Passport Index / app badges block */}
           <div className="space-y-3 md:justify-self-end">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-              Passport Index
+              {t("footer_passportindex_title") || "Passport Index"}
             </p>
             <p className="text-xs text-slate-400">
-              Track the world&apos;s passports, compare mobility, and explore
-              how programs improve global access.
+              {t("footer_passportindex_desc") ||
+                "Track the world's passports, compare mobility, and explore how programs improve global access."}
             </p>
             <div className="mt-3 flex flex-wrap gap-3">
               <Link
@@ -308,24 +323,28 @@ export function SiteFooter() {
                 className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-left text-[0.65rem] leading-tight text-slate-200 hover:border-slate-500"
               >
                 <span className="block text-[0.55rem] uppercase tracking-[0.18em] text-slate-400">
-                  Explore
+                  {t("footer_passportindex_explore_label") || "Explore"}
                 </span>
                 <span className="block text-xs font-semibold">
-                  PassportIndex™
+                  {t("footer_passportindex_brand") || "PassportIndex™"}
                 </span>
               </Link>
 
               <button className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-left text-[0.65rem] leading-tight text-slate-200 hover:border-slate-500">
                 <span className="block text-[0.55rem] uppercase tracking-[0.18em] text-slate-400">
-                  Download on the
+                  {t("footer_badge_appstore_label_top") || "Download on the"}
                 </span>
-                <span className="block text-xs font-semibold">App Store</span>
+                <span className="block text-xs font-semibold">
+                  {t("footer_badge_appstore_label_bottom") || "App Store"}
+                </span>
               </button>
               <button className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-left text-[0.65rem] leading-tight text-slate-200 hover:border-slate-500">
                 <span className="block text-[0.55rem] uppercase tracking-[0.18em] text-slate-400">
-                  Get it on
+                  {t("footer_badge_playstore_label_top") || "Get it on"}
                 </span>
-                <span className="block text-xs font-semibold">Google Play</span>
+                <span className="block text-xs font-semibold">
+                  {t("footer_badge_playstore_label_bottom") || "Google Play"}
+                </span>
               </button>
             </div>
           </div>
@@ -334,21 +353,27 @@ export function SiteFooter() {
         {/* Languages */}
         <div className="border-y border-slate-800 py-4 text-xs text-slate-400">
           <span className="font-semibold uppercase tracking-[0.18em] text-slate-500">
-            Languages
+            {t("languages_heading") || "Languages"}
           </span>
           <div className="mt-2 flex flex-wrap gap-3 text-[0.7rem]">
-            <button className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1 text-slate-100">
-              English
-            </button>
-            <button className="rounded-full border border-slate-800 px-3 py-1 hover:border-slate-600">
-              中文
-            </button>
-            <button className="rounded-full border border-slate-800 px-3 py-1 hover:border-slate-600">
-              Tiếng Việt
-            </button>
-            <button className="rounded-full border border-slate-800 px-3 py-1 hover:border-slate-600">
-              Русский
-            </button>
+            {LANGUAGE_ORDER.map((code) => {
+              const active = code === lang;
+              return (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => setLang(code)}
+                  className={[
+                    "rounded-full px-3 py-1 border transition-colors",
+                    active
+                      ? "border-slate-700 bg-slate-900 text-slate-100"
+                      : "border-slate-800 hover:border-slate-600 text-slate-300",
+                  ].join(" ")}
+                >
+                  {LANG_LABELS[code]}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -384,10 +409,11 @@ export function SiteFooter() {
                   );
                 })}
 
-                {/* small extra line you had in Contact */}
+                {/* small extra line you had in Contact, now translatable */}
                 {section.title === "Contact Us" && (
                   <span className="mt-2 text-[0.7rem] text-slate-500">
-                    Гражданство через Инвестиции
+                    {t("footer_contact_tagline") ||
+                      "Гражданство через Инвестиции"}
                   </span>
                 )}
               </div>
@@ -399,10 +425,12 @@ export function SiteFooter() {
         <div className="border-t border-slate-800 pt-4 text-[0.7rem] text-slate-500">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <span>
-              © {new Date().getFullYear()} Artsoncapital. All rights reserved.
+              © {new Date().getFullYear()}{" "}
+              {t("footer_copyright_brand") || "Artsoncapital"}.{" "}
+              {t("footer_copyright_rights") || "All rights reserved."}
             </span>
             <span className="text-slate-600">
-              
+              {/* space for extra legal / links later */}
             </span>
           </div>
         </div>
