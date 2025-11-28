@@ -282,7 +282,17 @@ const PROGRAMS_OF_INTEREST = [
   "ALL",
 ];
 
-export default function BecomeCertifiedPartnerPage() {
+type PageProps = {
+  searchParams?: {
+    submitted?: string;
+    error?: string;
+  };
+};
+
+export default function BecomeCertifiedPartnerPage({ searchParams }: PageProps) {
+  const submitted = searchParams?.submitted === "1";
+  const error = searchParams?.error;
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-50">
       {/* Hero */}
@@ -330,12 +340,25 @@ export default function BecomeCertifiedPartnerPage() {
             </p>
           </div>
 
+          {/* Success / error banner */}
+          {submitted && (
+            <div className="mt-6 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
+              Thank you. Your information has been received. Our team will
+              contact you within 24 hours.
+            </div>
+          )}
+          {error && !submitted && (
+            <div className="mt-6 rounded-xl border border-rose-500/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
+              {error || "Something went wrong. Please try again."}
+            </div>
+          )}
+
           {/* Form card */}
           <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-xl shadow-black/40 backdrop-blur sm:p-8">
             {/* 
               NOTE:
-              - No onSubmit handler here (this file is a Server Component).
-              - Handle the POST in an API route like /api/partner-lead.
+              - This posts to /api/partner-lead (Resend + auto-reply).
+              - The API route should redirect back with ?submitted=1 on success.
             */}
             <form
               className="space-y-10"
