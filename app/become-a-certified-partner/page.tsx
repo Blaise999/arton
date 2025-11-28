@@ -312,7 +312,7 @@ export default function BecomeCertifiedPartnerPage() {
         </div>
       </section>
 
-      {/* Content */}
+      {/* Content + Form */}
       <section className="bg-slate-950">
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="space-y-4 text-slate-100">
@@ -331,7 +331,6 @@ export default function BecomeCertifiedPartnerPage() {
             </p>
           </div>
 
-          {/* Form card with built-in success/error */}
           <BecomeCertifiedPartnerForm
             countries={COUNTRIES}
             programs={PROGRAMS_OF_INTEREST}

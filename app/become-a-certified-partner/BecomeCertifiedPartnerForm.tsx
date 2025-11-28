@@ -1,3 +1,4 @@
+// app/become-a-certified-partner/BecomeCertifiedPartnerForm.tsx
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -28,9 +29,15 @@ export function BecomeCertifiedPartnerForm({ countries, programs }: Props) {
         body: formData, // multipart/form-data -> matches req.formData() on the API
       });
 
-      const data = await res.json().catch(() => ({} as any));
+      let data: any = {};
+      try {
+        data = await res.clone().json();
+      } catch {
+        const text = await res.text();
+        console.error("Non-JSON response from /api/partner-lead:", text);
+      }
 
-      if (!res.ok || !data.ok) {
+      if (!res.ok || !data?.ok) {
         console.error("Error from /api/partner-lead:", data);
         setError(
           data?.error ||
