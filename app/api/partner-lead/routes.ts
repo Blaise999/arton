@@ -1,4 +1,3 @@
-// app/api/partner-lead/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import CertifiedPartnerLeadOwnerEmail from "@/app/emails/CertifiedPartnerLeadOwnerEmail";
@@ -8,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Where you receive new partner leads
 const OWNER_EMAIL =
-  process.env.CONTACT_RECIPIENT_EMAIL || "your-inbox@yourdomain.com";
+  process.env.CONTACT_RECIPIENT_EMAIL || "blaiseidoko@gmail.com";
 
 // From address configured in Resend (domain must be verified)
 const FROM_EMAIL =
@@ -84,12 +83,8 @@ export async function POST(req: NextRequest) {
       }),
     });
 
-    // Redirect back to the form with a simple success flag (optional)
-    const url = new URL(req.url);
-    url.pathname = "/become-a-certified-partner";
-    url.searchParams.set("submitted", "1");
-
-    return NextResponse.redirect(url);
+    // JSON success response for the client-side form
+    return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Error in /api/partner-lead:", error);
     return NextResponse.json(
