@@ -7,7 +7,8 @@ import "keen-slider/keen-slider.min.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
-import ChatWidget from "@/components/support/ChatWidget"; // 👈 add this
+import ChatWidget from "@/components/support/ChatWidget";
+import { VisitTracker } from "@/components/VisitTracker"; // 👈 logs all visitors
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,9 @@ export default function RootLayout({
       >
         {/* 🔑 Load Google Translate once for the whole app */}
         <GoogleTranslateLoader />
+
+        {/* 🔍 Track all visitors + paths for IP/location logging */}
+        <VisitTracker />
 
         <div className="flex min-h-screen flex-col">
           <SiteHeader />

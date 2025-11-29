@@ -20,6 +20,18 @@ type SupportConversation = {
   created_at: string;
 };
 
+type Visit = {
+  id: string;
+  ip: string | null;
+  city: string | null;
+  region: string | null;
+  country: string | null;
+  country_code: string | null;
+  path: string | null;
+  user_agent: string | null;
+  created_at: string;
+};
+
 export default function AdminSendEmailPage() {
   // personal email composer state
   const [to, setTo] = useState("");
@@ -28,13 +40,17 @@ export default function AdminSendEmailPage() {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<StatusState>(null);
 
-  // support conversations (for navigation only)
+  // support conversations (for navigation)
   const [convos, setConvos] = useState<SupportConversation[]>([]);
   const [loadingConvos, setLoadingConvos] = useState(true);
 
+  // all visitors (all page hits)
+  const [visits, setVisits] = useState<Visit[]>([]);
+  const [loadingVisits, setLoadingVisits] = useState(true);
+
   // Load recent support conversations
   useEffect(() => {
-    async function load() {
+    async function loadConvos() {
       setLoadingConvos(true);
       const { data, error } = await supabase
         .from("conversations")
@@ -53,7 +69,31 @@ export default function AdminSendEmailPage() {
       setLoadingConvos(false);
     }
 
-    load();
+    loadConvos();
+  }, []);
+
+  // Load recent visitors
+  useEffect(() => {
+    async function loadVisits() {
+      setLoadingVisits(true);
+      const { data, error } = await supabase
+        .from("visits")
+        .select(
+          "id, ip, city, region, country, country_code, path, user_agent, created_at"
+        )
+        .order("created_at", { ascending: false })
+        .limit(50);
+
+      if (error) {
+        console.error("Error loading visits:", error);
+        setVisits([]);
+      } else {
+        setVisits((data || []) as Visit[]);
+      }
+      setLoadingVisits(false);
+    }
+
+    loadVisits();
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -102,10 +142,6 @@ export default function AdminSendEmailPage() {
       }
 
       setStatus({ type: "success", text: "Email sent successfully." });
-      // keep fields so you see what you sent (optional to clear)
-      // setTo("");
-      // setSubject("");
-      // setMessage("");
     } catch (err) {
       console.error("Admin send failed:", err);
       setStatus({
@@ -118,15 +154,30 @@ export default function AdminSendEmailPage() {
     }
   }
 
-  function formatLocation(conv: SupportConversation) {
-    if (conv.city || conv.country) {
-      return `${conv.city ?? ""}${
-        conv.city && conv.country ? ", " : ""
-      }${conv.country ?? ""}`;
-    }
-    if (conv.country_code) return conv.country_code;
-    if (conv.ip) return conv.ip;
+  function formatLocation(
+    data:
+      | Pick<SupportConversation, "city" | "region" | "country" | "country_code" | "ip">
+      | Pick<Visit, "city" | "region" | "country" | "country_code" | "ip">
+  ) {
+    const parts = [data.city, data.region, data.country].filter(Boolean);
+    if (parts.length) return parts.join(", ");
+    if (data.country_code) return data.country_code;
+    if (data.ip) return data.ip;
     return "Unknown";
+  }
+
+  function formatDateTime(created_at: string) {
+    const dt = new Date(created_at);
+    const date = dt.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+    const time = dt.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+    return { date, time };
   }
 
   return (
@@ -147,7 +198,7 @@ export default function AdminSendEmailPage() {
           </p>
         </header>
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)]">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)]">
           {/* PERSONAL EMAIL FORM */}
           <div className="rounded-2xl border border-white/10 bg-black/60 p-4 md:p-6">
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -216,59 +267,141 @@ export default function AdminSendEmailPage() {
             </form>
           </div>
 
-          {/* SUPPORT QUESTIONS SIDEBAR (NAV TO LIVE CHAT) */}
+          {/* RIGHT SIDEBAR: ALL VISITORS + SUPPORT CONVOS */}
           <aside className="rounded-2xl border border-white/10 bg-black/60 p-4 md:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
-              Support Questions (Live Chat)
+              Site Visitors & Support
             </h2>
             <p className="mt-2 text-xs text-white/55">
-              These are recent conversations from the on-site support widget.
-              Click a visitor to open the full live thread and reply directly in
-              chat.
+              See all recent visitors to your site (IP, location, time, path),
+              plus live chat conversations for follow-up.
             </p>
 
-            <div className="mt-4 h-[360px] overflow-y-auto rounded-xl border border-white/10 bg-black/40">
-              {loadingConvos && (
-                <div className="p-3 text-xs text-white/50">
-                  Loading conversations…
-                </div>
-              )}
+            {/* ALL VISITORS */}
+            <div className="mt-4 rounded-xl border border-white/10 bg-black/40">
+              <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+                  Recent Visitors (All Pages)
+                </span>
+                <span className="text-[10px] text-white/40">
+                  Last {visits.length} hits
+                </span>
+              </div>
 
-              {!loadingConvos && convos.length === 0 && (
-                <div className="p-3 text-xs text-white/50">
-                  No conversations yet. When visitors use the support widget,
-                  they&apos;ll appear here.
-                </div>
-              )}
+              <div className="max-h-48 overflow-y-auto">
+                {loadingVisits && (
+                  <div className="px-3 py-2 text-xs text-white/50">
+                    Loading visitors…
+                  </div>
+                )}
 
-              {!loadingConvos &&
-                convos.map((c) => (
-                  <Link
-                    key={c.id}
-                    href={`/admin/support/${c.id}`}
-                    className="block w-full border-b border-white/5 px-3 py-2.5 text-left text-xs last:border-b-0 hover:bg-white/5"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-semibold text-[11px] text-white">
-                        {c.name || c.email || "Visitor"}
-                      </span>
-                      <span className="text-[9px] text-white/45">
-                        {new Date(c.created_at).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <div className="mt-0.5 text-[10px] text-white/55">
-                      {formatLocation(c)}
-                    </div>
-                    {c.last_message && (
-                      <p className="mt-1 line-clamp-2 text-[11px] text-white/75">
-                        “{c.last_message}”
-                      </p>
-                    )}
-                    <p className="mt-1 text-[10px] text-[#cc9966]">
-                      Open live thread →
-                    </p>
-                  </Link>
-                ))}
+                {!loadingVisits && visits.length === 0 && (
+                  <div className="px-3 py-2 text-xs text-white/50">
+                    No visits logged yet.
+                  </div>
+                )}
+
+                {!loadingVisits &&
+                  visits.map((v) => {
+                    const { date, time } = formatDateTime(v.created_at);
+                    const loc = formatLocation(v);
+
+                    return (
+                      <div
+                        key={v.id}
+                        className="border-b border-white/5 px-3 py-2 text-[10px] last:border-b-0"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-white/70">{loc}</span>
+                          <span className="text-white/40">
+                            {date} · {time}
+                          </span>
+                        </div>
+                        <div className="mt-0.5 flex items-center justify-between gap-2">
+                          <span className="font-mono text-[10px] text-white/55">
+                            {v.ip || "Unknown IP"}
+                          </span>
+                          <span className="text-[10px] text-[#cc9966]">
+                            {v.path || "/"}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+
+            {/* SUPPORT CONVERSATIONS */}
+            <div className="mt-4 rounded-xl border border-white/10 bg-black/40">
+              <div className="flex items-center justify-between border-b border-white/10 px-3 py-2">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
+                  Support Questions (Live Chat)
+                </span>
+                <span className="text-[10px] text-white/40">
+                  Last {convos.length} threads
+                </span>
+              </div>
+
+              <div className="max-h-52 overflow-y-auto">
+                {loadingConvos && (
+                  <div className="px-3 py-2 text-xs text-white/50">
+                    Loading conversations…
+                  </div>
+                )}
+
+                {!loadingConvos && convos.length === 0 && (
+                  <div className="px-3 py-2 text-xs text-white/50">
+                    No conversations yet. When visitors use the support widget,
+                    they&apos;ll appear here.
+                  </div>
+                )}
+
+                {!loadingConvos &&
+                  convos.map((c) => {
+                    const { date, time } = formatDateTime(c.created_at);
+                    const loc = formatLocation(c);
+
+                    return (
+                      <Link
+                        key={c.id}
+                        href={`/admin/support/${c.id}`}
+                        className="block w-full border-b border-white/5 px-3 py-2.5 text-left text-xs last:border-b-0 hover:bg-white/5"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-semibold text-[11px] text-white">
+                            {c.name || c.email || "Visitor"}
+                          </span>
+                          <span className="text-[9px] text-white/45">
+                            {date}
+                          </span>
+                        </div>
+
+                        <div className="mt-0.5 text-[10px] text-white/60">
+                          {loc !== "Unknown" ? loc : "Unknown location"}{" "}
+                          <span className="text-white/40">·</span> {time}
+                          {c.ip && (
+                            <>
+                              <span className="text-white/40"> · </span>
+                              <span className="font-mono text-[10px]">
+                                {c.ip}
+                              </span>
+                            </>
+                          )}
+                        </div>
+
+                        {c.last_message && (
+                          <p className="mt-1 line-clamp-2 text-[11px] text-white/75">
+                            “{c.last_message}”
+                          </p>
+                        )}
+
+                        <p className="mt-1 text-[10px] text-[#cc9966]">
+                          Open live thread →
+                        </p>
+                      </Link>
+                    );
+                  })}
+              </div>
             </div>
           </aside>
         </div>
