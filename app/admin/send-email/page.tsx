@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { supabase } from "@/libs/supabaseClient";
 
 type StatusState = null | { type: "success" | "error"; text: string };
@@ -20,15 +21,16 @@ type SupportConversation = {
 };
 
 export default function AdminSendEmailPage() {
+  // personal email composer state
   const [to, setTo] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<StatusState>(null);
 
+  // support conversations (for navigation only)
   const [convos, setConvos] = useState<SupportConversation[]>([]);
   const [loadingConvos, setLoadingConvos] = useState(true);
-  const [selected, setSelected] = useState<SupportConversation | null>(null);
 
   // Load recent support conversations
   useEffect(() => {
@@ -53,29 +55,6 @@ export default function AdminSendEmailPage() {
 
     load();
   }, []);
-
-  function handleSelectConversation(conv: SupportConversation) {
-    setSelected(conv);
-
-    // If user left email form empty, prefill from conversation
-    if (conv.email) {
-      setTo(conv.email);
-    }
-
-    if (!subject.trim()) {
-      setSubject("Reply to your Artsoncapital enquiry");
-    }
-
-    // Only auto-fill message if it's still empty so we don't blow away your typing
-    if (!message.trim()) {
-      const name = conv.name || "Client";
-      const question = conv.last_message || "your enquiry";
-
-      setMessage(
-        `Dear ${name},\n\nThank you for reaching out to Artsoncapital via our website.\n\nYou asked:\n“${question}”\n\nBelow is our initial guidance:\n\n[Write your detailed answer here]\n\nIf you’d like, we can also schedule a call to discuss suitable residency or citizenship options for your profile.\n\nBest regards,\nArtsoncapital Advisory Team`
-      );
-    }
-  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -123,7 +102,10 @@ export default function AdminSendEmailPage() {
       }
 
       setStatus({ type: "success", text: "Email sent successfully." });
-      // keep fields so you see what you sent
+      // keep fields so you see what you sent (optional to clear)
+      // setTo("");
+      // setSubject("");
+      // setMessage("");
     } catch (err) {
       console.error("Admin send failed:", err);
       setStatus({
@@ -152,57 +134,23 @@ export default function AdminSendEmailPage() {
       <div className="mx-auto max-w-6xl px-4 pb-16">
         <header className="mb-8">
           <h1 className="text-2xl font-semibold md:text-3xl">
-            Admin • Reply & Send Email
+            Admin • Send Email
           </h1>
           <p className="mt-2 text-sm text-white/60">
-            Reply to incoming support questions and send one-off emails from
-            your Resend-powered address.
+            Send one-off, manual emails from your Resend-powered address. Use
+            this for personalised follow-ups, proposals, or onboarding flows.
           </p>
           <p className="mt-1 text-xs text-white/50">
             Replies from clients will go to your configured{" "}
             <span className="font-medium">From / Reply-To</span> address in
-            Resend, so you can continue the conversation directly from your
-            inbox.
+            Resend, so you can continue the conversation in your inbox.
           </p>
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)]">
-          {/* EMAIL FORM */}
+          {/* PERSONAL EMAIL FORM */}
           <div className="rounded-2xl border border-white/10 bg-black/60 p-4 md:p-6">
             <form onSubmit={handleSubmit} className="space-y-5">
-              {selected && (
-                <div className="mb-2 rounded-xl border border-white/15 bg-white/5 p-3 text-xs text-white/80">
-                  <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
-                    <span className="font-semibold">
-                      Replying to:{" "}
-                      {selected.name ||
-                        selected.email ||
-                        "Website visitor"}
-                    </span>
-                    <span className="text-[10px] text-white/50">
-                      {new Date(selected.created_at).toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="text-[11px] text-white/70">
-                    <span className="text-white/50">Location / IP:&nbsp;</span>
-                    {formatLocation(selected)}{" "}
-                    {selected.ip && (
-                      <span className="text-white/45">
-                        · {selected.ip}
-                      </span>
-                    )}
-                  </div>
-                  {selected.last_message && (
-                    <p className="mt-2 text-[11px] text-white/75">
-                      <span className="text-white/50">
-                        Last question:
-                      </span>{" "}
-                      “{selected.last_message}”
-                    </p>
-                  )}
-                </div>
-              )}
-
               <div>
                 <label className="block text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                   To
@@ -224,7 +172,7 @@ export default function AdminSendEmailPage() {
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  placeholder="Reply to your residency / citizenship enquiry"
+                  placeholder="Your residency / citizenship options"
                   className="mt-2 w-full rounded-xl border border-white/20 bg-black/40 px-3 py-2.5 text-sm text-white outline-none focus:border-[#cc9966] focus:bg-black/60"
                 />
               </div>
@@ -268,14 +216,15 @@ export default function AdminSendEmailPage() {
             </form>
           </div>
 
-          {/* SUPPORT QUESTIONS SIDEBAR */}
+          {/* SUPPORT QUESTIONS SIDEBAR (NAV TO LIVE CHAT) */}
           <aside className="rounded-2xl border border-white/10 bg-black/60 p-4 md:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">
-              Support Questions
+              Support Questions (Live Chat)
             </h2>
             <p className="mt-2 text-xs text-white/55">
-              Recent chats from the on-site support widget. Select a visitor to
-              see their question, approximate location and craft an email reply.
+              These are recent conversations from the on-site support widget.
+              Click a visitor to open the full live thread and reply directly in
+              chat.
             </p>
 
             <div className="mt-4 h-[360px] overflow-y-auto rounded-xl border border-white/10 bg-black/40">
@@ -293,36 +242,33 @@ export default function AdminSendEmailPage() {
               )}
 
               {!loadingConvos &&
-                convos.map((c) => {
-                  const isActive = selected?.id === c.id;
-                  return (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => handleSelectConversation(c)}
-                      className={`block w-full text-left border-b border-white/5 px-3 py-2.5 text-xs last:border-b-0 hover:bg-white/5 ${
-                        isActive ? "bg-white/10" : ""
-                      }`}
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="font-semibold text-[11px] text-white">
-                          {c.name || c.email || "Visitor"}
-                        </span>
-                        <span className="text-[9px] text-white/45">
-                          {new Date(c.created_at).toLocaleDateString()}
-                        </span>
-                      </div>
-                      <div className="mt-0.5 text-[10px] text-white/55">
-                        {formatLocation(c)}
-                      </div>
-                      {c.last_message && (
-                        <p className="mt-1 line-clamp-2 text-[11px] text-white/75">
-                          “{c.last_message}”
-                        </p>
-                      )}
-                    </button>
-                  );
-                })}
+                convos.map((c) => (
+                  <Link
+                    key={c.id}
+                    href={`/admin/support/${c.id}`}
+                    className="block w-full border-b border-white/5 px-3 py-2.5 text-left text-xs last:border-b-0 hover:bg-white/5"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-semibold text-[11px] text-white">
+                        {c.name || c.email || "Visitor"}
+                      </span>
+                      <span className="text-[9px] text-white/45">
+                        {new Date(c.created_at).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <div className="mt-0.5 text-[10px] text-white/55">
+                      {formatLocation(c)}
+                    </div>
+                    {c.last_message && (
+                      <p className="mt-1 line-clamp-2 text-[11px] text-white/75">
+                        “{c.last_message}”
+                      </p>
+                    )}
+                    <p className="mt-1 text-[10px] text-[#cc9966]">
+                      Open live thread →
+                    </p>
+                  </Link>
+                ))}
             </div>
           </aside>
         </div>
