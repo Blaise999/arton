@@ -7,6 +7,7 @@ import "keen-slider/keen-slider.min.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
+import ChatWidget from "@/components/support/ChatWidget"; // 👈 add this
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,9 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </div>
+
+        {/* 👇 Floating support chat widget, visible on every page */}
+        <ChatWidget />
       </body>
     </html>
   );
