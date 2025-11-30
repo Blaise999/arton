@@ -206,7 +206,7 @@ export default function ChatWidget() {
           <div className="px-4 py-3 border-b flex items-center justify-between bg-slate-900 text-white">
             <div>
               <div className="text-sm font-semibold">
-                Artsoncapital Concierge
+                artoncapital Concierge
               </div>
               <div className="text-[11px] text-slate-200">
                 Residency & citizenship support

@@ -277,7 +277,7 @@ export function SiteFooter() {
               Mobility, security, opportunity — structured for generations.
             </h3>
             <p className="max-w-xl text-sm text-slate-400">
-              Artsoncapital helps investors, partners, and governments design
+              artoncapital helps investors, partners, and governments design
               compliant, investment-led residency and citizenship strategies in
               key jurisdictions worldwide.
             </p>
@@ -402,7 +402,7 @@ export function SiteFooter() {
         <div className="border-t border-slate-800 pt-4 text-[0.7rem] text-slate-500">
           <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <span>
-              © {new Date().getFullYear()} Artsoncapital. All rights reserved.
+              © {new Date().getFullYear()} artoncapital. All rights reserved.
             </span>
             <span className="text-slate-600">
               {/* extra legal / links if needed */}

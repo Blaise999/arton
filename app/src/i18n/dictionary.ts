@@ -19,7 +19,7 @@ export const dictionary: Dict = {
     footer_tagline_title: "Empowering Global Citizenship",
     footer_tagline_body: "Mobility, security, opportunity — structured for generations.",
     footer_tagline_desc:
-      "Artsoncapital helps investors, partners, and governments design compliant, investment-led residency and citizenship strategies in key jurisdictions worldwide.",
+      "artoncapital helps investors, partners, and governments design compliant, investment-led residency and citizenship strategies in key jurisdictions worldwide.",
     footer_cta_global_citizen: "Become a Global Citizen",
     footer_cta_certified_partner: "Become a Certified Partner",
     footer_passportindex_title: "Passport Index",
@@ -32,7 +32,7 @@ export const dictionary: Dict = {
     footer_badge_playstore_label_top: "Get it on",
     footer_badge_playstore_label_bottom: "Google Play",
     footer_contact_tagline: "Гражданство через Инвестиции",
-    footer_copyright_brand: "Artsoncapital",
+    footer_copyright_brand: "artoncapital",
     footer_copyright_rights: "All rights reserved.",
 
     // example for homepage / other pages later:
@@ -47,7 +47,7 @@ export const dictionary: Dict = {
     footer_tagline_title: "赋能全球公民身份",
     footer_tagline_body: "流动性、安全性与机会，为世代规划。",
     footer_tagline_desc:
-      "Artsoncapital 协助投资者、合作伙伴和政府，在重点司法辖区设计合规的投资入籍与居留方案。",
+      "artoncapital 协助投资者、合作伙伴和政府，在重点司法辖区设计合规的投资入籍与居留方案。",
     footer_cta_global_citizen: "成为全球公民",
     footer_cta_certified_partner: "成为认证合作伙伴",
     footer_passportindex_title: "护照指数",
@@ -60,7 +60,7 @@ export const dictionary: Dict = {
     footer_badge_playstore_label_top: "获取于",
     footer_badge_playstore_label_bottom: "Google Play",
     footer_contact_tagline: "投资入籍项目",
-    footer_copyright_brand: "Artsoncapital",
+    footer_copyright_brand: "artoncapital",
     footer_copyright_rights: "版权所有。",
 
     hero_title: "全球公民身份，从此变得简单",
@@ -74,7 +74,7 @@ export const dictionary: Dict = {
     footer_tagline_body:
       "Tính linh hoạt, an ninh và cơ hội — được cấu trúc cho nhiều thế hệ.",
     footer_tagline_desc:
-      "Artsoncapital hỗ trợ nhà đầu tư, đối tác và chính phủ xây dựng các chiến lược cư trú và quốc tịch dựa trên đầu tư, tuân thủ pháp lý tại các khu vực trọng điểm.",
+      "artoncapital hỗ trợ nhà đầu tư, đối tác và chính phủ xây dựng các chiến lược cư trú và quốc tịch dựa trên đầu tư, tuân thủ pháp lý tại các khu vực trọng điểm.",
     footer_cta_global_citizen: "Trở thành Công dân Toàn cầu",
     footer_cta_certified_partner: "Trở thành Đối tác Chứng nhận",
     footer_passportindex_title: "Passport Index",
@@ -87,7 +87,7 @@ export const dictionary: Dict = {
     footer_badge_playstore_label_top: "Nhận trên",
     footer_badge_playstore_label_bottom: "Google Play",
     footer_contact_tagline: "Quốc tịch thông qua đầu tư",
-    footer_copyright_brand: "Artsoncapital",
+    footer_copyright_brand: "artoncapital",
     footer_copyright_rights: "Đã đăng ký mọi quyền.",
 
     hero_title: "Quyền công dân toàn cầu trở nên đơn giản",
@@ -102,7 +102,7 @@ export const dictionary: Dict = {
     footer_tagline_body:
       "Мобильность, безопасность и возможности — выстроенные для поколений.",
     footer_tagline_desc:
-      "Artsoncapital помогает инвесторам, партнёрам и государственным органам разрабатывать соответствующие требованиям программы резидентства и гражданства через инвестиции в ключевых юрисдикциях.",
+      "artoncapital помогает инвесторам, партнёрам и государственным органам разрабатывать соответствующие требованиям программы резидентства и гражданства через инвестиции в ключевых юрисдикциях.",
     footer_cta_global_citizen: "Стать Глобальным Гражданином",
     footer_cta_certified_partner: "Стать Сертифицированным Партнёром",
     footer_passportindex_title: "Passport Index",
@@ -115,7 +115,7 @@ export const dictionary: Dict = {
     footer_badge_playstore_label_top: "Получить в",
     footer_badge_playstore_label_bottom: "Google Play",
     footer_contact_tagline: "Гражданство через инвестиции",
-    footer_copyright_brand: "Artsoncapital",
+    footer_copyright_brand: "artoncapital",
     footer_copyright_rights: "Все права защищены.",
 
     hero_title: "Глобальное гражданство — это просто",

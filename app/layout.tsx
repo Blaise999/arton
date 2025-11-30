@@ -13,9 +13,9 @@ import { VisitTracker } from "@/components/VisitTracker"; // 👈 logs all visit
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Artsoncapital — Global Residency & Citizenship",
+  title: "artoncapital — Global Residency & Citizenship",
   description:
-    "Artsoncapital helps investors, partners, and governments design and access global residency and citizenship programs.",
+    "artoncapital helps investors, partners, and governments design and access global residency and citizenship programs.",
 };
 
 export default function RootLayout({

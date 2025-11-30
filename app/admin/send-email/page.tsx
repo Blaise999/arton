@@ -235,7 +235,7 @@ export default function AdminSendEmailPage() {
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder={`Dear Client,\n\nThank you for your interest in Artsoncapital...`}
+                  placeholder={`Dear Client,\n\nThank you for your interest in artoncapital...`}
                   className="mt-2 min-h-[220px] w-full rounded-xl border border-white/20 bg-black/40 px-3 py-3 text-sm text-white outline-none focus:border-[#cc9966] focus:bg-black/60"
                 />
                 <p className="mt-2 text-[11px] text-white/40">
