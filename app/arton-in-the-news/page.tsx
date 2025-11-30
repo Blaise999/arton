@@ -528,7 +528,7 @@ export default function InTheNewsPage() {
                   For press inquiries:
                 </div>
                 <div className="mt-1 text-base font-semibold">
-                  media@artoncapitals.com
+                  media@artonscapitalholdings.com
                 </div>
                 <div className="mt-2 text-sm text-slate-500">
                   Response within 24 hours

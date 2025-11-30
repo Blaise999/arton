@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     const from =
       process.env.RESEND_FROM_EMAIL ||
-      "Arton Capital <advisors@mail.artoncapitals.com>";
+      "Arton Capital <advisors@mail.artonscapitalholdings.com>";
 
     const { data, error } = await resend.emails.send({
       from,

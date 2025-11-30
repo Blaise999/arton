@@ -29,7 +29,7 @@ const nextConfig = {
       // just add patterns like this:
       // {
       //   protocol: "https",
-      //   hostname: "www.artoncapitals.com",
+      //   hostname: "www.artonscapitalholdings.com",
       //   pathname: "/wp-content/**",
       // },
     ],

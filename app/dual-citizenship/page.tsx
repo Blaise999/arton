@@ -172,7 +172,7 @@ export default function DualCitizenshipPage() {
 
               <div className="mt-6">
                 <a
-                  href="https://www.artoncapitals.com/become-a-global-citizen/"
+                  href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center rounded-full bg-[#b4833f] px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-black"
@@ -240,7 +240,7 @@ export default function DualCitizenshipPage() {
               <p>
                 More and more countries are offering{" "}
                 <a
-                  href="https://www.artoncapitals.com/citizenship-by-investment/"
+                  href="https://www.artonscapitalholdings.com/citizenship-by-investment/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-[#b4833f] underline-offset-2 hover:underline"
@@ -249,7 +249,7 @@ export default function DualCitizenshipPage() {
                 </a>{" "}
                 or{" "}
                 <a
-                  href="https://www.artoncapitals.com/residency-by-investment/"
+                  href="https://www.artonscapitalholdings.com/residency-by-investment/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-[#b4833f] underline-offset-2 hover:underline"
@@ -264,7 +264,7 @@ export default function DualCitizenshipPage() {
 
               <div className="mt-6">
                 <a
-                  href="https://www.artoncapitals.com/tools/program-match/"
+                  href="https://www.artonscapitalholdings.com/tools/program-match/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center rounded-full bg-[#b4833f] px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-black"
@@ -420,7 +420,7 @@ export default function DualCitizenshipPage() {
 
               <div className="mt-6">
                 <a
-                  href="https://www.artoncapitals.com/become-a-global-citizen/"
+                  href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center rounded-full bg-[#b4833f] px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-black"

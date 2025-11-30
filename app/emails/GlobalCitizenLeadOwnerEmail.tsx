@@ -17,7 +17,7 @@ export default function GlobalCitizenLeadOwnerEmail({
   fields,
 }: GlobalCitizenLeadOwnerEmailProps) {
   // Match ArtonAdminMessageEmail aesthetic
-  const siteUrl = "https://artoncapitals.com";
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
 

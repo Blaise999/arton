@@ -14,7 +14,7 @@ export default function CertifiedPartnerLeadOwnerEmail({
   email,
   fields,
 }: CertifiedPartnerLeadOwnerEmailProps) {
-  const siteUrl = "https://artoncapitals.com";
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
 

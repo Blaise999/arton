@@ -388,19 +388,19 @@ export default function SaintLuciaProgramPage() {
           <div className="mt-4 grid gap-4 md:grid-cols-3">
             <ToolCard
               title="Program Check"
-              href="https://www.artoncapitals.com/tools/program-check/"
+              href="https://www.artonscapitalholdings.com/tools/program-check/"
               badge="Program Check"
               description="Compare Saint Lucia with other programs side by side and analyse key features."
             />
             <ToolCard
               title="Program Cost"
-              href="https://www.artoncapitals.com/tools/program-cost/"
+              href="https://www.artonscapitalholdings.com/tools/program-cost/"
               badge="Program Cost"
               description="Estimate the total investment and fees for various family configurations."
             />
             <ToolCard
               title="Program Map"
-              href="https://www.artoncapitals.com/tools/program-map/"
+              href="https://www.artonscapitalholdings.com/tools/program-map/"
               badge="Program Map"
               description="Visualise visa-free and visa-on-arrival access with a Saint Lucia passport."
             />
@@ -409,7 +409,7 @@ export default function SaintLuciaProgramPage() {
           <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
             <span className="text-neutral-700">Need more information?</span>
             <Link
-              href="https://www.artoncapitals.com/become-a-global-citizen/"
+              href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
               className="inline-flex items-center rounded-full bg-black px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white hover:bg-neutral-900"
             >
               Contact us

@@ -165,7 +165,7 @@ export default function CertifiedPartnersPage() {
               Contact us today to learn how to become a member of the growing
               global citizenship movement.&nbsp;
               <a
-                href="https://www.artoncapitals.com/become-a-certified-partner/"
+                href="https://www.artonscapitalholdings.com/become-a-certified-partner/"
                 className="font-semibold text-[#cc9966] underline"
               >
                 Become a Certified Partner now.
@@ -204,7 +204,7 @@ export default function CertifiedPartnersPage() {
               Qualified Certified Partners are issued certificates that are
               renewed every year following a board review.&nbsp;
               <a
-                href="https://www.artoncapitals.com/become-a-certified-partner/"
+                href="https://www.artonscapitalholdings.com/become-a-certified-partner/"
                 className="font-semibold text-[#cc9966] underline"
               >
                 Contact us

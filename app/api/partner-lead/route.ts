@@ -10,7 +10,7 @@ const OWNER_EMAIL =
 
 // From address configured in Resend (domain must be verified)
 const FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL || "Arton Capital <no-reply@artoncapitals.com>";
+  process.env.RESEND_FROM_EMAIL || "Arton Capital <no-reply@artonscapitalholdings.com>";
 
 export async function POST(req: NextRequest) {
   try {

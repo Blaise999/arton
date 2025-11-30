@@ -28,59 +28,59 @@ const NEWS_ITEMS: NewsItem[] = [
     date: "2025-11-14",
     title:
       "Portugal’s Socialist Party has sent the recently approved Nationality Law amendments directly to the Court for preventive…",
-    href: "https://artoncapitals.com/industry-news/portugals-nationality-law-moves-to-the-constitutional-court/",
+    href: "https://artonscapitalholdings.com/industry-news/portugals-nationality-law-moves-to-the-constitutional-court/",
   },
   {
     date: "2025-11-12",
     title:
       "Bulgaria’s Residency by Investment Program enters its strongest chapter yet.",
-    href: "https://artoncapitals.com/industry-news/one-investment-schengen-today-euro-tomorrow/",
+    href: "https://artonscapitalholdings.com/industry-news/one-investment-schengen-today-euro-tomorrow/",
   },
   {
     date: "2025-11-06",
     title:
       "Arton Capital and Dubai Sotheby’s International Realty launch strategic alliance.",
-    href: "https://artoncapitals.com/industry-news/press-releases/arton-capital-and-dubai-sothebys-international-realty-launch-strategic-alliance-to-redefine-global-living-for-hnwis/",
+    href: "https://artonscapitalholdings.com/industry-news/press-releases/arton-capital-and-dubai-sothebys-international-realty-launch-strategic-alliance-to-redefine-global-living-for-hnwis/",
   },
   {
     date: "2025-11-03",
     title: "Botswana’s Vision Transcends Geography",
-    href: "https://artoncapitals.com/industry-news/botswanas-impact-citizenship-program-attracts-1000-investors-in-first-month/",
+    href: "https://artonscapitalholdings.com/industry-news/botswanas-impact-citizenship-program-attracts-1000-investors-in-first-month/",
   },
   {
     date: "2025-10-29",
     title: "Portugal’s Nationality Law Is Evolving",
-    href: "https://artoncapitals.com/industry-news/portugals-nationality-law/",
+    href: "https://artonscapitalholdings.com/industry-news/portugals-nationality-law/",
   },
   {
     date: "2025-10-23",
     title: "Borders Never Meant To Be Closed Forever",
-    href: "https://artoncapitals.com/industry-news/uk-visa-requirement-for-botswana-nationals/",
+    href: "https://artonscapitalholdings.com/industry-news/uk-visa-requirement-for-botswana-nationals/",
   },
   {
     date: "2025-10-21",
     title: "EES for Dual Nationals",
-    href: "https://artoncapitals.com/industry-news/ees-for-dual-nationals/",
+    href: "https://artonscapitalholdings.com/industry-news/ees-for-dual-nationals/",
   },
   {
     date: "2025-10-13",
     title: "Is the EU Becoming Harder to Reach?",
-    href: "https://artoncapitals.com/industry-news/visa-suspension-mechanism/",
+    href: "https://artonscapitalholdings.com/industry-news/visa-suspension-mechanism/",
   },
   {
     date: "2025-10-07",
     title: "H-1B Just Got Expensive",
-    href: "https://artoncapitals.com/industry-news/h-1b-just-got-expensive/",
+    href: "https://artonscapitalholdings.com/industry-news/h-1b-just-got-expensive/",
   },
   {
     date: "2025-09-26",
     title: "Botswana to launch Impact Citizenship Programme",
-    href: "https://artoncapitals.com/industry-news/botswana-to-launch-impact-citizenship-programme/",
+    href: "https://artonscapitalholdings.com/industry-news/botswana-to-launch-impact-citizenship-programme/",
   },
   {
     date: "2025-09-25",
     title: "Trump's Gold Card is 80% Reduced",
-    href: "https://artoncapitals.com/industry-news/trumps-gold-card-original-price-cut-platinum-card-introduced/",
+    href: "https://artonscapitalholdings.com/industry-news/trumps-gold-card-original-price-cut-platinum-card-introduced/",
   },
 ];
 
@@ -156,10 +156,10 @@ function NewsSlider() {
           </div>
         </div>
 
-        {/* See more link (still works, now on artoncapitals.com) */}
+        {/* See more link (still works, now on artonscapitalholdings.com) */}
         <div className="hidden text-xs font-medium text-[#d3a163] md:block">
           <Link
-            href="https://artoncapitals.com/industry-news/"
+            href="https://artonscapitalholdings.com/industry-news/"
             target="_blank"
             rel="noreferrer"
             className="hover:underline"
@@ -319,80 +319,80 @@ const PROGRAMS: Program[] = [
     icon: "https://www.artoncapital.com/wp-content/uploads/2025/10/arton-icons-sao-100x100.png",
     name: "São Tomé and Príncipe",
     subtitle: "Citizenship by Investment Program",
-    href: "https://artoncapitals.com/global-citizen-programs/sao-tome-principe-citizenship-by-investment/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/sao-tome-principe-citizenship-by-investment/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/12/PC-antigua-icon.png",
     name: "Antigua & Barbuda",
     subtitle: "Citizenship by Investment Program",
-    href: "https://artoncapitals.com/global-citizen-programs/antigua-and-barbuda/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/07/PC-dominica-icon.png",
     name: "Dominica",
     subtitle: "Economic Citizenship Program",
-    href: "https://artoncapitals.com/global-citizen-programs/dominica/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/dominica/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2025/10/arton-icons-greece.png",
     name: "Greece",
     subtitle: "Golden Visa Program",
-    href: "https://artoncapitals.com/global-citizen-programs/greece-golden-visa-program/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/greece-golden-visa-program/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/12/PC-grenada-icon.png",
     name: "Grenada",
     subtitle: "Citizenship by Investment Program",
-    href: "https://artoncapitals.com/global-citizen-programs/grenada/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/grenada/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/10/PC-hungary-icon.png",
     name: "Hungary",
     subtitle: "Investor Residence Program",
-    href: "https://artoncapitals.com/global-citizen-programs/hungary/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/hungary/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2025/06/PC-latvia-icon.png",
     name: "Latvia",
     subtitle: "Residency by Investment Program",
-    href: "https://artoncapitals.com/global-citizen-programs/latvia/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/latvia/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2025/01/PC-malta-icon.png",
     name: "Malta",
     subtitle: "Permanent Residency by Investment",
-    href: "https://artoncapitals.com/global-citizen-programs/malta/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/malta/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2016/06/PT-100x100.png",
     name: "Portugal",
     subtitle: "Golden Residence Permit",
-    href: "https://artoncapitals.com/global-citizen-programs/portugal/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/portugal/",
   },
   {
     icon:
       "https://www.artoncapital.com/wp-content/uploads/2015/12/PC_Saint_Lucia_icon-100x100.png",
     name: "Saint Lucia",
     subtitle: "",
-    href: "https://artoncapitals.com/global-citizen-programs/saint-lucia/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/saint-lucia/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/07/PC-stKitts-icon.png",
     name: "St. Kitts & Nevis",
     subtitle: "Citizenship by Investment Program",
-    href: "https://artoncapitals.com/global-citizen-programs/st-kitts-nevis/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2025/06/PC-spain-icon.png",
     name: "Spain",
     subtitle: "Residency Program",
-    href: "https://artoncapitals.com/global-citizen-programs/spain/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/spain/",
   },
   {
     icon: "https://www.artoncapital.com/wp-content/uploads/2013/07/PC-USA-icon.png",
     name: "USA EB-5",
     subtitle: "Immigrant Investor Program",
-    href: "https://artoncapitals.com/global-citizen-programs/usa-eb-5/",
+    href: "https://artonscapitalholdings.com/global-citizen-programs/usa-eb-5/",
   },
 ];
 
@@ -528,7 +528,7 @@ function GlobalExperiencesRow() {
                 <div className="absolute inset-x-0 bottom-0 bg-black/75 py-4 text-center">
                   <h2 className="text-[0.9rem] font-semibold uppercase tracking-[0.18em] text-white md:text-[1.05rem]">
                     <Link
-                      href="https://artoncapitals.com/industry-news/artonair-takes-flight-the-future-of-global-citizenship-and-seamless-travel/"
+                      href="https://artonscapitalholdings.com/industry-news/artonair-takes-flight-the-future-of-global-citizenship-and-seamless-travel/"
                       target="_blank"
                       rel="noreferrer"
                       className="hover:underline"
@@ -799,7 +799,7 @@ function ContactWidget() {
       {open && (
         <>
           <a
-            href="https://artoncapitals.com/contact-us/"
+            href="https://artonscapitalholdings.com/contact-us/"
             title="Email"
             className="contact-icon flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg transition hover:bg-slate-100"
           >
@@ -807,7 +807,7 @@ function ContactWidget() {
           </a>
 
           <a
-            href="https://artoncapitals.com/contact-us/"
+            href="https://artonscapitalholdings.com/contact-us/"
             target="_blank"
             rel="noreferrer"
             title="WhatsApp"

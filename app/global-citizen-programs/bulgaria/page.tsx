@@ -353,17 +353,17 @@ export default function BulgariaResidencyPage() {
               <div className="grid gap-4 md:grid-cols-3">
                 <ProgramTool
                   title="Program Check"
-                  href="https://www.artoncapitals.com/tools/program-check/"
+                  href="https://www.artonscapitalholdings.com/tools/program-check/"
                   description="Compare different programs side by side and examine their key features."
                 />
                 <ProgramTool
                   title="Program Cost"
-                  href="https://www.artoncapitals.com/tools/program-cost/"
+                  href="https://www.artonscapitalholdings.com/tools/program-cost/"
                   description="Estimate the total cost for this program tailored to your family."
                 />
                 <ProgramTool
                   title="Program Map"
-                  href="https://www.artoncapitals.com/tools/program-map/"
+                  href="https://www.artonscapitalholdings.com/tools/program-map/"
                   description="See the power of global mobility for each passport."
                 />
               </div>
@@ -373,7 +373,7 @@ export default function BulgariaResidencyPage() {
                   Need more information or a tailored assessment?
                 </p>
                 <Link
-                  href="https://www.artoncapitals.com/become-a-global-citizen/"
+                  href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                   className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-black"
                 >
                   Contact Us

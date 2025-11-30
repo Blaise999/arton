@@ -4,6 +4,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { supabase } from "@/libs/supabaseClient";
+import { handler } from "next/dist/build/templates/pages";
 
 export function VisitTracker() {
   const pathname = usePathname();

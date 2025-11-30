@@ -30,7 +30,7 @@ export default function CitizenshipByInvestmentPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://www.artoncapitals.com/wp-content/uploads/2017/03/Arton-slider-Citizenship-by-Investment.jpg')",
+              "url('https://www.artonscapitalholdings.com/wp-content/uploads/2017/03/Arton-slider-Citizenship-by-Investment.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20" />
@@ -107,7 +107,7 @@ export default function CitizenshipByInvestmentPage() {
           </p>
           <div className="mt-4">
             <a
-              href="https://www.artoncapitals.com/global-citizen-programs/program-overview/"
+              href="https://www.artonscapitalholdings.com/global-citizen-programs/program-overview/"
               className="inline-block rounded-full bg-[#c78a41] px-6 py-2.5 text-xs font-semibold tracking-[0.16em] uppercase text-white hover:bg-black transition-colors"
             >
               See Our Program Overview
@@ -123,7 +123,7 @@ export default function CitizenshipByInvestmentPage() {
           <p className="leading-relaxed mb-4">
             There are many reasons to invest in a{" "}
             <a
-              href="https://www.artoncapitals.com/dual-citizenship/"
+              href="https://www.artonscapitalholdings.com/dual-citizenship/"
               className="text-[#c78a41] hover:underline"
             >
               second citizenship
@@ -139,7 +139,7 @@ export default function CitizenshipByInvestmentPage() {
             </a>{" "}
             and more. Economic citizenship opens up a world of possibilities to{" "}
             <a
-              href="https://www.artoncapitals.com/high-net-worth-investors/"
+              href="https://www.artonscapitalholdings.com/high-net-worth-investors/"
               className="text-[#c78a41] hover:underline"
             >
               high net worth investors
@@ -211,7 +211,7 @@ export default function CitizenshipByInvestmentPage() {
           </h3>
           <p className="leading-relaxed">
             <a
-              href="https://www.artoncapitals.com/dual-citizenship/"
+              href="https://www.artonscapitalholdings.com/dual-citizenship/"
               className="text-[#c78a41] hover:underline"
             >
               Dual citizenship
@@ -275,7 +275,7 @@ export default function CitizenshipByInvestmentPage() {
             <p>
               For example,{" "}
               <a
-                href="https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/"
+                href="https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/"
                 target="_blank"
                 rel="noreferrer"
                 className="text-[#c78a41] hover:underline"
@@ -326,31 +326,31 @@ export default function CitizenshipByInvestmentPage() {
                     "Antigua & Barbuda",
                     "4–5 months",
                     "US$230,000",
-                    "https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/",
+                    "https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/",
                   ],
                   [
                     "Dominica",
                     "3 months",
                     "US$200,000",
-                    "https://www.artoncapitals.com/global-citizen-programs/dominica/",
+                    "https://www.artonscapitalholdings.com/global-citizen-programs/dominica/",
                   ],
                   [
                     "Grenada",
                     "7–8 months",
                     "US$235,000",
-                    "https://www.artoncapitals.com/global-citizen-programs/grenada/",
+                    "https://www.artonscapitalholdings.com/global-citizen-programs/grenada/",
                   ],
                   [
                     "Saint Lucia",
                     "9–12 months",
                     "US$240,000",
-                    "https://www.artoncapitals.com/global-citizen-programs/saint-lucia/",
+                    "https://www.artonscapitalholdings.com/global-citizen-programs/saint-lucia/",
                   ],
                   [
                     "St. Kitts & Nevis",
                     "6–12 months",
                     "US$250,000",
-                    "https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/",
+                    "https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/",
                   ],
                 ].map(([name, time, min, href]) => (
                   <tr key={name} className="odd:bg-white even:bg-[#fbf8f4]">
@@ -382,7 +382,7 @@ export default function CitizenshipByInvestmentPage() {
 
           <div className="mt-4">
             <a
-              href="https://www.artoncapitals.com/become-a-global-citizen/"
+              href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
               className="inline-block rounded-full bg-[#c78a41] px-6 py-2.5 text-xs font-semibold tracking-[0.16em] uppercase text-white hover:bg-black transition-colors"
             >
               Contact Us to Learn More
@@ -472,7 +472,7 @@ export default function CitizenshipByInvestmentPage() {
             <p>
               Switzerland can be said to have the first{" "}
               <a
-                href="https://www.artoncapitals.com/residency-by-investment/"
+                href="https://www.artonscapitalholdings.com/residency-by-investment/"
                 className="text-[#c78a41] hover:underline"
               >
                 residency by investment program
@@ -503,7 +503,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">1984</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/"
                   className="text-[#c78a41] hover:underline"
                 >
                   St. Kitts &amp; Nevis Citizenship by Investment Program
@@ -514,7 +514,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">1993</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/dominica/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/dominica/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Dominica Economic Citizenship Program
@@ -525,7 +525,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">2011</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/cyprus/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/cyprus/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Cyprus Naturalization of Investors by Exception Scheme
@@ -536,7 +536,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">2012</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Antigua &amp; Barbuda Citizenship by Investment Program
@@ -547,7 +547,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">2013</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/grenada/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/grenada/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Grenada Citizenship by Investment Program
@@ -558,7 +558,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">2015</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/saint-lucia/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/saint-lucia/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Saint Lucia Citizenship by Investment Program
@@ -569,7 +569,7 @@ export default function CitizenshipByInvestmentPage() {
               <h4 className="font-semibold mb-1 text-base">2018</h4>
               <p>
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/montenegro/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/montenegro/"
                   className="text-[#c78a41] hover:underline"
                 >
                   Montenegro Citizenship by Investment Program
@@ -609,21 +609,21 @@ export default function CitizenshipByInvestmentPage() {
             <p>
               Arton plays a critical role in empowering{" "}
               <a
-                href="https://www.artoncapitals.com/government-agencies/"
+                href="https://www.artonscapitalholdings.com/government-agencies/"
                 className="text-[#c78a41] hover:underline"
               >
                 governments
               </a>
               ,{" "}
               <a
-                href="https://www.artoncapitals.com/certified-partners/"
+                href="https://www.artonscapitalholdings.com/certified-partners/"
                 className="text-[#c78a41] hover:underline"
               >
                 consultants
               </a>
               , legal and financial professionals, and{" "}
               <a
-                href="https://www.artoncapitals.com/high-net-worth-investors/"
+                href="https://www.artonscapitalholdings.com/high-net-worth-investors/"
                 className="text-[#c78a41] hover:underline"
               >
                 investors
@@ -633,7 +633,7 @@ export default function CitizenshipByInvestmentPage() {
           </div>
           <div className="mt-4">
             <a
-              href="https://www.artoncapitals.com/become-a-global-citizen/"
+              href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
               className="inline-block rounded-full bg-[#c78a41] px-6 py-2.5 text-xs font-semibold tracking-[0.16em] uppercase text-white hover:bg-black transition-colors"
             >
               Contact Us to Become a Global Citizen
@@ -699,31 +699,31 @@ export default function CitizenshipByInvestmentPage() {
                 title: "Program Check",
                 icon: "⚖️",
                 desc: "Compare the different programs side by side and examine their features.",
-                href: "https://www.artoncapitals.com/tools/program-check/",
+                href: "https://www.artonscapitalholdings.com/tools/program-check/",
               },
               {
                 title: "Program Cost",
                 icon: "$",
                 desc: "Find out the cost estimates for each program tailored to your family.",
-                href: "https://www.artoncapitals.com/tools/program-cost/",
+                href: "https://www.artonscapitalholdings.com/tools/program-cost/",
               },
               {
                 title: "Program Map",
                 icon: "🌍",
                 desc: "See the power of global mobility for each passport.",
-                href: "https://www.artoncapitals.com/tools/program-map/",
+                href: "https://www.artonscapitalholdings.com/tools/program-map/",
               },
               {
                 title: "Program Match",
                 icon: "🎯",
                 desc: "Find the program that best matches your goals.",
-                href: "https://www.artoncapitals.com/tools/program-match/",
+                href: "https://www.artonscapitalholdings.com/tools/program-match/",
               },
               {
                 title: "Arton Index",
                 icon: "📊",
                 desc: "Discover how the industry benchmark ranks the different programs.",
-                href: "https://www.artoncapitals.com/tools/arton-index/",
+                href: "https://www.artonscapitalholdings.com/tools/arton-index/",
               },
               {
                 title: "Passport Index",

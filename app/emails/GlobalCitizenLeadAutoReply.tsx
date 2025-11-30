@@ -9,7 +9,7 @@ interface GlobalCitizenLeadAutoReplyProps {
 export default function GlobalCitizenLeadAutoReply({
   fname,
 }: GlobalCitizenLeadAutoReplyProps) {
-  const siteUrl = "https://artoncapitals.com";
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
   const firstName = fname || "Client";

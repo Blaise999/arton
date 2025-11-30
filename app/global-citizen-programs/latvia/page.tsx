@@ -209,7 +209,7 @@ export default function LatviaResidencyByInvestmentPage() {
               <div className="mt-4 grid gap-6 md:grid-cols-3">
                 <div className="flex flex-col items-center rounded-md border border-[#e1e1e1] bg-[#fafafa] px-4 py-5 text-center">
                   <Link
-                    href="https://www.artoncapitals.com/tools/program-check/"
+                    href="https://www.artonscapitalholdings.com/tools/program-check/"
                     target="_blank"
                     className="text-sm font-semibold uppercase tracking-[0.16em] text-[#cc9966]"
                   >
@@ -223,7 +223,7 @@ export default function LatviaResidencyByInvestmentPage() {
 
                 <div className="flex flex-col items-center rounded-md border border-[#e1e1e1] bg-[#fafafa] px-4 py-5 text-center">
                   <Link
-                    href="https://www.artoncapitals.com/tools/program-cost/"
+                    href="https://www.artonscapitalholdings.com/tools/program-cost/"
                     target="_blank"
                     className="text-sm font-semibold uppercase tracking-[0.16em] text-[#cc9966]"
                   >
@@ -237,7 +237,7 @@ export default function LatviaResidencyByInvestmentPage() {
 
                 <div className="flex flex-col items-center rounded-md border border-[#e1e1e1] bg-[#fafafa] px-4 py-5 text-center">
                   <Link
-                    href="https://www.artoncapitals.com/tools/program-map/"
+                    href="https://www.artonscapitalholdings.com/tools/program-map/"
                     target="_blank"
                     className="text-sm font-semibold uppercase tracking-[0.16em] text-[#cc9966]"
                   >
@@ -252,7 +252,7 @@ export default function LatviaResidencyByInvestmentPage() {
               <div className="mt-6 flex flex-col items-center gap-2 text-center text-sm text-[#555] md:flex-row md:justify-between">
                 <p className="mb-2 md:mb-0">Need more information?</p>
                 <Link
-                  href="https://www.artoncapitals.com/become-a-global-citizen/"
+                  href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                   target="_blank"
                   className="inline-flex items-center justify-center border border-[#cc9966] bg-[#cc9966] px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black hover:border-black"
                 >

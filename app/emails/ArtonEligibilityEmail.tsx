@@ -18,7 +18,7 @@ export function ArtonEligibilityEmail({
   family,
   timeline,
 }: ArtonEligibilityEmailProps) {
-  const siteUrl = "https://artoncapitals.com";
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
 

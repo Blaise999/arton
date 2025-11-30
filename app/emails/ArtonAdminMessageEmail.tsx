@@ -11,8 +11,8 @@ export function ArtonAdminMessageEmail({
   message,
 }: ArtonAdminMessageEmailProps) {
   // When deployed, these files live at https://yourdomain.com/Pics/...
-  // If your live domain is artoncapitals.com, these URLs will be valid as-is.
-  const siteUrl = "https://artoncapitals.com";
+  // If your live domain is artonscapitalholdings.com, these URLs will be valid as-is.
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
 

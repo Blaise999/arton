@@ -35,7 +35,7 @@ export const metadata = {
   },
 };
 
-const CONTACT_EMAIL = "@mail.artoncapitals.com";
+const CONTACT_EMAIL = "@mail.artonscapitalholdings.com";
 
 const PHONE_LINES = [
   {

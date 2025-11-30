@@ -55,14 +55,14 @@ export default function GlobalCitizenPage() {
             <p>
               Whether you are seeking{" "}
               <a
-                href="https://www.artoncapitals.com/residency-by-investment"
+                href="https://www.artonscapitalholdings.com/residency-by-investment"
                 className="text-[#cc9966] hover:underline"
               >
                 permanent residency
               </a>{" "}
               or a{" "}
               <a
-                href="https://www.artoncapitals.com/citizenship-by-investment"
+                href="https://www.artonscapitalholdings.com/citizenship-by-investment"
                 className="text-[#cc9966] hover:underline"
               >
                 second citizenship
@@ -71,7 +71,7 @@ export default function GlobalCitizenPage() {
               innovative, bespoke investor programs and services. Learn how
               becoming a{" "}
               <a
-                href="https://www.artoncapitals.com/high-net-worth-investors"
+                href="https://www.artonscapitalholdings.com/high-net-worth-investors"
                 className="text-[#cc9966] hover:underline"
               >
                 Global Citizen
@@ -89,7 +89,7 @@ export default function GlobalCitizenPage() {
               the application process through to obtainment of PR or citizenship
               and beyond. Arton Capital’s{" "}
               <a
-                href="https://www.artoncapitals.com/certified-partners"
+                href="https://www.artonscapitalholdings.com/certified-partners"
                 className="text-[#cc9966] hover:underline"
               >
                 Certified Partner
@@ -105,7 +105,7 @@ export default function GlobalCitizenPage() {
               Residency by investment and citizenship by investment programs
               open up an incredible revenue stream to{" "}
               <a
-                href="https://www.artoncapitals.com/government-agencies"
+                href="https://www.artonscapitalholdings.com/government-agencies"
                 className="text-[#cc9966] hover:underline"
               >
                 governments

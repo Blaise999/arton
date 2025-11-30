@@ -70,7 +70,7 @@ export default function ThankYouPage() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="artoncapitals.com /?utm_source=landing-page&utm_medium=thankyou-page&utm_campaign=cta"
+              href="artonscapitalholdings.com /?utm_source=landing-page&utm_medium=thankyou-page&utm_campaign=cta"
               className="inline-flex items-center justify-center rounded-full bg-[#cc9966] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#cc9966]/40"
             >
               Visit Our Website

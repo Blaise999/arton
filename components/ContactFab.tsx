@@ -33,7 +33,7 @@ export default function ContactFab() {
         </a>
 
         <a
-          href="https://www.artoncapitals.com/contact-us/"
+          href="https://www.artonscapitalholdings.com/contact-us/"
           className={`transition-all duration-300 ${
             open ? "translate-y-0 opacity-100 pointer-events-auto" : "translate-y-4 opacity-0 pointer-events-none"
           } bg-white rounded-full p-3 shadow-lg border border-black/10`}

@@ -54,7 +54,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Antigua & Barbuda",
     countryCode: "AG",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/",
     minNetWorth: 1000000,
     minContribution: 230000,
     contributionTypes: ["donation", "real-estate", "funds"],
@@ -71,7 +71,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Bulgaria",
     countryCode: "BG",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/bulgaria/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/bulgaria/",
     minNetWorth: 2000000,
     minContribution: 550000,
     contributionTypes: ["bonds", "funds"],
@@ -88,7 +88,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Quebec, Canada",
     countryCode: "CA",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/canada-quebec/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/canada-quebec/",
     minNetWorth: 2000000,
     minContribution: 1200000,
     contributionTypes: ["bonds", "funds"],
@@ -105,7 +105,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Cyprus",
     countryCode: "CY",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/cyprus/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/cyprus/",
     minNetWorth: 2000000,
     minContribution: 2000000,
     contributionTypes: ["real-estate", "funds"],
@@ -122,7 +122,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Dominica",
     countryCode: "DM",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/dominica/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/dominica/",
     minNetWorth: 500000,
     minContribution: 200000,
     contributionTypes: ["donation", "real-estate"],
@@ -139,7 +139,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Grenada",
     countryCode: "GD",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/grenada/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/grenada/",
     minNetWorth: 800000,
     minContribution: 220000,
     contributionTypes: ["donation", "real-estate"],
@@ -156,7 +156,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Hungary",
     countryCode: "HU",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/hungary/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/hungary/",
     minNetWorth: 1000000,
     minContribution: 300000,
     contributionTypes: ["bonds", "funds"],
@@ -173,7 +173,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Latvia",
     countryCode: "LV",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/latvia/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/latvia/",
     minNetWorth: 800000,
     minContribution: 300000,
     contributionTypes: ["real-estate", "funds"],
@@ -190,7 +190,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Malta",
     countryCode: "MT",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/malta/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/malta/",
     minNetWorth: 1500000,
     minContribution: 800000,
     contributionTypes: ["donation", "real-estate", "funds"],
@@ -207,7 +207,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Montenegro",
     countryCode: "ME",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/montenegro/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/montenegro/",
     minNetWorth: 800000,
     minContribution: 450000,
     contributionTypes: ["donation", "real-estate"],
@@ -224,7 +224,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Portugal",
     countryCode: "PT",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/portugal/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/portugal/",
     minNetWorth: 1000000,
     minContribution: 350000,
     contributionTypes: ["real-estate", "funds"],
@@ -241,7 +241,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Saint Lucia",
     countryCode: "LC",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/saint-lucia/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/saint-lucia/",
     minNetWorth: 500000,
     minContribution: 200000,
     contributionTypes: ["donation", "bonds", "real-estate"],
@@ -258,7 +258,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "St. Kitts & Nevis",
     countryCode: "KN",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/",
     minNetWorth: 700000,
     minContribution: 250000,
     contributionTypes: ["donation", "real-estate"],
@@ -275,7 +275,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Spain",
     countryCode: "ES",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/spain/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/spain/",
     minNetWorth: 1000000,
     minContribution: 500000,
     contributionTypes: ["real-estate", "funds"],
@@ -292,7 +292,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "United Kingdom",
     countryCode: "GB",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/united-kingdom/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/united-kingdom/",
     minNetWorth: 2000000,
     minContribution: 2000000,
     contributionTypes: ["funds"],
@@ -309,7 +309,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "USA EB-5",
     countryCode: "US",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/usa-eb-5/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/usa-eb-5/",
     minNetWorth: 2000000,
     minContribution: 900000,
     contributionTypes: ["funds", "real-estate"],
@@ -326,7 +326,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "Greece Golden Visa",
     countryCode: "GR",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/greece-golden-visa-program/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/greece-golden-visa-program/",
     minNetWorth: 800000,
     minContribution: 250000,
     contributionTypes: ["real-estate", "funds"],
@@ -343,7 +343,7 @@ export const PROGRAM_MATCH_PROFILES: ProgramMatchProfile[] = [
     label: "São Tomé and Príncipe",
     countryCode: "ST",
     detailsUrl:
-      "https://www.artoncapitals.com/global-citizen-programs/sao-tome-principe-citizenship-by-investment/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/sao-tome-principe-citizenship-by-investment/",
     minNetWorth: 500000,
     minContribution: 200000,
     contributionTypes: ["donation", "real-estate"],

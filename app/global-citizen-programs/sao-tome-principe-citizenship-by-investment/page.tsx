@@ -112,19 +112,19 @@ const countryFacts = [
 const nextStepTools = [
   {
     name: "Program Check",
-    href: "https://www.artoncapitals.com/tools/program-check/",
+    href: "https://www.artonscapitalholdings.com/tools/program-check/",
     description:
       "Compare the different programs side by side and examine their features.",
   },
   {
     name: "Program Cost",
-    href: "https://www.artoncapitals.com/tools/program-cost/",
+    href: "https://www.artonscapitalholdings.com/tools/program-cost/",
     description:
       "Find out the cost estimates for each program tailored to your family.",
   },
   {
     name: "Program Map",
-    href: "https://www.artoncapitals.com/tools/program-map/",
+    href: "https://www.artonscapitalholdings.com/tools/program-map/",
     description: "See the power of global mobility for each passport.",
   },
 ];
@@ -338,7 +338,7 @@ export default function SaoTomePrincipeCitizenshipPage() {
                     Citizenship by Investment Program?
                   </p>
                   <Link
-                    href="https://www.artoncapitals.com/become-a-global-citizen/"
+                    href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                     target="_blank"
                     className="rounded-full bg-[#c48b4b] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-[#a87437]"
                   >

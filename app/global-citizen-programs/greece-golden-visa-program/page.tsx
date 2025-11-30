@@ -226,17 +226,17 @@ export default function GreeceGoldenVisaProgramPage() {
             <div className="grid gap-4 md:grid-cols-3">
               <NextStepCard
                 title="Program Check"
-                href="https://www.artoncapitals.com/tools/program-check/"
+                href="https://www.artonscapitalholdings.com/tools/program-check/"
                 description="Compare different programs side by side and examine their features."
               />
               <NextStepCard
                 title="Program Cost"
-                href="https://www.artoncapitals.com/tools/program-cost/"
+                href="https://www.artonscapitalholdings.com/tools/program-cost/"
                 description="Estimate costs tailored to your family and chosen route."
               />
               <NextStepCard
                 title="Program Map"
-                href="https://www.artoncapitals.com/tools/program-map/"
+                href="https://www.artonscapitalholdings.com/tools/program-map/"
                 description="See the power of global mobility for each passport."
               />
             </div>
@@ -246,7 +246,7 @@ export default function GreeceGoldenVisaProgramPage() {
                 Need more information about the Greece Golden Visa?
               </p>
               <Link
-                href="https://www.artoncapitals.com/become-a-global-citizen/"
+                href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                 className="rounded-full bg-black px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white hover:bg-slate-900"
               >
                 Contact us

@@ -204,24 +204,24 @@ export default function AntiguaAndBarbudaPage() {
               <ProgramToolCard
                 title="Program Check"
                 description="Compare programs side-by-side and review key features."
-                href="https://www.artoncapitals.com/tools/program-check/"
+                href="https://www.artonscapitalholdings.com/tools/program-check/"
               />
               <ProgramToolCard
                 title="Program Cost"
                 description="Estimate total investment and fees for your family."
-                href="https://www.artoncapitals.com/tools/program-cost/"
+                href="https://www.artonscapitalholdings.com/tools/program-cost/"
               />
               <ProgramToolCard
                 title="Program Map"
                 description="Visualize global mobility and visa-free reach."
-                href="https://www.artoncapitals.com/tools/program-map/"
+                href="https://www.artonscapitalholdings.com/tools/program-map/"
               />
             </div>
 
             <div className="mt-4 rounded-xl border border-[#d7c3a4] bg-white/70 px-4 py-3 text-sm text-[#555555] shadow-sm">
               Need more information?{" "}
               <a
-                href="https://www.artoncapitals.com/become-a-global-citizen/"
+                href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                 className="font-semibold text-[#b27b3b] underline underline-offset-2"
               >
                 Contact us

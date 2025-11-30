@@ -20,19 +20,19 @@ const BROCHURE_COVER =
 const tools = [
   {
     label: "Program Check",
-    href: "https://www.artoncapitals.com/tools/program-check/",
+    href: "https://www.artonscapitalholdings.com/tools/program-check/",
     description:
       "Compare the different programs side by side and examine their features.",
   },
   {
     label: "Program Cost",
-    href: "https://www.artoncapitals.com/tools/program-cost/",
+    href: "https://www.artonscapitalholdings.com/tools/program-cost/",
     description:
       "Find out the cost estimates for each program tailored to your family.",
   },
   {
     label: "Program Map",
-    href: "https://www.artoncapitals.com/tools/program-map/",
+    href: "https://www.artonscapitalholdings.com/tools/program-map/",
     description: "See the power of global mobility for each passport.",
   },
 ];
@@ -196,7 +196,7 @@ export default function SpainResidencyProgramPage() {
                 Need more information?
               </p>
               <Link
-                href="https://www.artoncapitals.com/become-a-global-citizen/"
+                href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                 target="_blank"
                 className="inline-flex items-center justify-center rounded-full border border-[#f3c27d] px-5 py-2 text-sm font-semibold uppercase tracking-wide text-white bg-[#f3c27d] hover:bg-[#d6a155] hover:border-[#d6a155] transition-colors"
               >

@@ -53,7 +53,7 @@ const programCards: ProgramCard[] = [
   {
     title: "Antigua & Barbuda",
     href:
-      "https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-Antigua-Barbuda.png",
     imgAlt: "Citizenship by Investment Program for Antigua & Barbuda",
@@ -61,14 +61,14 @@ const programCards: ProgramCard[] = [
   {
     title: "Quebec, Canada",
     href:
-      "https://www.artoncapitals.com/global-citizen-programs/canada-quebec/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/canada-quebec/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2025/06/Arton-Canada-cover.jpg",
     imgAlt: "Citizenship by Investment Program for Quebec, Canada",
   },
   {
     title: "Dominica",
-    href: "https://www.artoncapitals.com/global-citizen-programs/dominica/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/dominica/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-Dominica.png",
     imgAlt: "Citizenship by Investment Program for Dominica",
@@ -76,49 +76,49 @@ const programCards: ProgramCard[] = [
   {
     title: "Greece",
     href:
-      "https://www.artoncapitals.com/global-citizen-programs/greece-golden-visa-program/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/greece-golden-visa-program/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2023/03/Arton-Greece-Brochure-Cover.jpg",
     imgAlt: "Citizenship by Investment Program for Greece",
   },
   {
     title: "Grenada",
-    href: "https://www.artoncapitals.com/global-citizen-programs/grenada/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/grenada/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-Grenada.png",
     imgAlt: "Citizenship by Investment Program for Grenada",
   },
   {
     title: "Spain",
-    href: "https://www.artoncapitals.com/global-citizen-programs/spain/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/spain/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2025/06/Arton-Spain-brochure-cover.jpg",
     imgAlt: "Citizenship by Investment Program for Spain",
   },
   {
     title: "Hungary",
-    href: "https://www.artoncapitals.com/global-citizen-programs/hungary/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/hungary/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2023/04/Arton_Brochure_Hungary_cover.jpg",
     imgAlt: "Citizenship by Investment Program for Hungary",
   },
   {
     title: "Latvia",
-    href: "https://www.artoncapitals.com/global-citizen-programs/latvia/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/latvia/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2025/06/Arton-Latvia-cover.jpg",
     imgAlt: "Citizenship by Investment Program for Latvia",
   },
   {
     title: "Malta",
-    href: "https://www.artoncapitals.com/global-citizen-programs/malta/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/malta/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2025/01/Arton_Brochure_Malta_RCBI-2025-01-P1-2.jpg",
     imgAlt: "Citizenship by Investment Program for Malta",
   },
   {
     title: "Portugal",
-    href: "https://www.artoncapitals.com/global-citizen-programs/portugal/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/portugal/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2016/06/Arton_Brochure_Portugal_cover.jpg",
     imgAlt: "Citizenship by Investment Program for Portugal",
@@ -126,7 +126,7 @@ const programCards: ProgramCard[] = [
   {
     title: "Saint Lucia",
     href:
-      "https://www.artoncapitals.com/global-citizen-programs/saint-lucia/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/saint-lucia/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2015/12/Arton_Saint-Lucia.png",
     imgAlt: "Citizenship by Investment Program for Saint Lucia",
@@ -134,7 +134,7 @@ const programCards: ProgramCard[] = [
   {
     title: "St. Kitts & Nevis",
     href:
-      "https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/",
+      "https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-StKitts.png",
     imgAlt: "Citizenship by Investment Program for St. Kitts & Nevis",
@@ -152,7 +152,7 @@ export default function ProgramOverviewPage() {
         />
         <link
           rel="canonical"
-          href="https://www.artoncapitals.com/program-overview"
+          href="https://www.artonscapitalholdings.com/program-overview"
         />
       </Head>
 
@@ -254,49 +254,49 @@ export default function ProgramOverviewPage() {
               <p>
                 Discover our programs:{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/"
                   className="underline"
                 >
                   Antigua and Barbuda
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/dominica/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/dominica/"
                   className="underline"
                 >
                   Dominica
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/greece/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/greece/"
                   className="underline"
                 >
                   Greece
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/grenada/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/grenada/"
                   className="underline"
                 >
                   Grenada
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/hungary/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/hungary/"
                   className="underline"
                 >
                   Hungary
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/portugal/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/portugal/"
                   className="underline"
                 >
                   Portugal
                 </a>
                 ,{" "}
                 <a
-                  href="https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/"
+                  href="https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/"
                   className="underline"
                 >
                   St. Kitts and Nevis

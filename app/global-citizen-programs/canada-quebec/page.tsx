@@ -953,14 +953,14 @@ export default function QuebecCanadaPage() {
               </span>
               <span className="hidden md:inline">&nbsp;|&nbsp;</span>
               <a
-                href="https://www.artoncapitals.com/confidentiality-policy/"
+                href="https://www.artonscapitalholdings.com/confidentiality-policy/"
                 className="underline-offset-2 hover:underline"
               >
                 Confidentiality policy
               </a>
               <span>&nbsp;|&nbsp;</span>
               <a
-                href="https://www.artoncapitals.com/legal-notes/"
+                href="https://www.artonscapitalholdings.com/legal-notes/"
                 className="underline-offset-2 hover:underline"
               >
                 Legal notes

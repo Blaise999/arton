@@ -239,7 +239,7 @@ export default function MaltaResidencyByInvestmentPage() {
             <div className="container program-cost-footer grid gap-5 md:grid-cols-3 mb-6">
               <div className="tools text-center bg-[#fdf7ee] border border-[#eadfce] rounded-lg px-4 py-4">
                 <a
-                  href="https://www.artoncapitals.com/tools/program-check/"
+                  href="https://www.artonscapitalholdings.com/tools/program-check/"
                   className="program-check arton-tools inline-block text-[13px] font-semibold tracking-[0.16em] uppercase text-[#4b3b30] hover:text-[#cc9966]"
                   title="Program Check"
                   target="_blank"
@@ -249,7 +249,7 @@ export default function MaltaResidencyByInvestmentPage() {
                 </a>
                 <h4 className="mt-2 text-[13px] font-semibold">
                   <a
-                    href="https://www.artoncapitals.com/tools/program-check/"
+                    href="https://www.artonscapitalholdings.com/tools/program-check/"
                     title="Program Check"
                     target="_blank"
                     rel="noreferrer"
@@ -266,7 +266,7 @@ export default function MaltaResidencyByInvestmentPage() {
 
               <div className="tools text-center bg-[#fdf7ee] border border-[#eadfce] rounded-lg px-4 py-4">
                 <a
-                  href="https://www.artoncapitals.com/tools/program-cost/"
+                  href="https://www.artonscapitalholdings.com/tools/program-cost/"
                   className="program-cost arton-tools inline-block text-[13px] font-semibold tracking-[0.16em] uppercase text-[#4b3b30] hover:text-[#cc9966]"
                   title="Program Cost"
                   target="_blank"
@@ -276,7 +276,7 @@ export default function MaltaResidencyByInvestmentPage() {
                 </a>
                 <h4 className="mt-2 text-[13px] font-semibold">
                   <a
-                    href="https://www.artoncapitals.com/tools/program-cost/"
+                    href="https://www.artonscapitalholdings.com/tools/program-cost/"
                     title="Program Cost"
                     target="_blank"
                     rel="noreferrer"
@@ -293,7 +293,7 @@ export default function MaltaResidencyByInvestmentPage() {
 
               <div className="tools text-center bg-[#fdf7ee] border border-[#eadfce] rounded-lg px-4 py-4">
                 <a
-                  href="https://www.artoncapitals.com/tools/program-map/"
+                  href="https://www.artonscapitalholdings.com/tools/program-map/"
                   className="program-map arton-tools inline-block text-[13px] font-semibold tracking-[0.16em] uppercase text-[#4b3b30] hover:text-[#cc9966]"
                   title="Program Map"
                   target="_blank"
@@ -303,7 +303,7 @@ export default function MaltaResidencyByInvestmentPage() {
                 </a>
                 <h4 className="mt-2 text-[13px] font-semibold">
                   <a
-                    href="https://www.artoncapitals.com/tools/program-map/"
+                    href="https://www.artonscapitalholdings.com/tools/program-map/"
                     title="Program Map"
                     target="_blank"
                     rel="noreferrer"
@@ -324,7 +324,7 @@ export default function MaltaResidencyByInvestmentPage() {
                 Need more information?
               </p>
               <a
-                href="https://www.artoncapitals.com/become-a-global-citizen/"
+                href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                 className="inline-flex items-center justify-center rounded-full border border-[#cc9966] bg-[#cc9966] px-4 py-1.5 text-[13px] font-semibold uppercase tracking-[0.16em] text-white hover:bg-black hover:border-black transition"
               >
                 Contact us.

@@ -19,7 +19,7 @@ export default function MontenegroProgramPage() {
         />
         <link
           rel="canonical"
-          href="https://www.artoncapitals.com/global-citizen-programs/montenegro/"
+          href="https://www.artonscapitalholdings.com/global-citizen-programs/montenegro/"
         />
         <meta
           property="og:title"
@@ -31,7 +31,7 @@ export default function MontenegroProgramPage() {
         />
         <meta
           property="og:url"
-          content="https://www.artoncapitals.com/global-citizen-programs/montenegro/"
+          content="https://www.artonscapitalholdings.com/global-citizen-programs/montenegro/"
         />
         <meta property="og:site_name" content="Arton Capital" />
         <meta
@@ -227,17 +227,17 @@ export default function MontenegroProgramPage() {
                 </h4>
                 <div className="grid gap-6 md:grid-cols-3">
                   <ToolCard
-                    href="https://www.artoncapitals.com/tools/program-check/"
+                    href="https://www.artonscapitalholdings.com/tools/program-check/"
                     title="Program Check"
                     description="Compare the different programs side by side and examine their features."
                   />
                   <ToolCard
-                    href="https://www.artoncapitals.com/tools/program-cost/"
+                    href="https://www.artonscapitalholdings.com/tools/program-cost/"
                     title="Program Cost"
                     description="Find out the cost estimates for each program tailored to your family."
                   />
                   <ToolCard
-                    href="https://www.artoncapitals.com/tools/program-map/"
+                    href="https://www.artonscapitalholdings.com/tools/program-map/"
                     title="Program Map"
                     description="See the power of global mobility for each passport."
                   />
@@ -246,7 +246,7 @@ export default function MontenegroProgramPage() {
                 <div className="mt-6 flex flex-wrap items-center gap-3 text-[14px]">
                   <p className="mb-0">Need more information?</p>
                   <a
-                    href="https://www.artoncapitals.com/become-a-global-citizen/"
+                    href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-4 py-2 text-sm font-semibold tracking-[0.16em] uppercase text-white bg-[#cc9966] hover:bg-black transition-colors"

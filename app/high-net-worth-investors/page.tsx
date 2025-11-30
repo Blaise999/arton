@@ -16,56 +16,56 @@ const hero = {
 const programCards = [
   {
     title: "Antigua & Barbuda",
-    href: "https://www.artoncapitals.com/global-citizen-programs/antigua-and-barbuda/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/antigua-and-barbuda/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-Antigua-Barbuda.png",
     imgAlt: "Citizenship by Investment Program for Antigua & Barbuda",
   },
   {
     title: "Dominica",
-    href: "https://www.artoncapitals.com/global-citizen-programs/dominica/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/dominica/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-Dominica.png",
     imgAlt: "Citizenship by Investment Program for Dominica",
   },
   {
     title: "Greece",
-    href: "https://www.artoncapitals.com/global-citizen-programs/greece-golden-visa-program/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/greece-golden-visa-program/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2023/03/Arton-Greece-Brochure-Cover.jpg",
     imgAlt: "Citizenship by Investment Program for Greece",
   },
   {
     title: "Grenada",
-    href: "https://www.artoncapitals.com/global-citizen-programs/grenada/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/grenada/",
     imgSrc:
-      "https://www.artoncapitals.com/wp-content/uploads/2013/07/Arton-Grenada.png",
+      "https://www.artonscapitalholdings.com/wp-content/uploads/2013/07/Arton-Grenada.png",
     imgAlt: "Citizenship by Investment Program for Grenada",
   },
   {
     title: "Hungary",
-    href: "https://www.artoncapitals.com/global-citizen-programs/hungary/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/hungary/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2023/04/Arton_Brochure_Hungary_cover.jpg",
     imgAlt: "Citizenship by Investment Program for Hungary",
   },
   {
     title: "Portugal",
-    href: "https://www.artoncapitals.com/global-citizen-programs/portugal/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/portugal/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2016/06/Arton_Brochure_Portugal_cover.jpg",
     imgAlt: "Citizenship by Investment Program for Portugal",
   },
   {
     title: "Saint Lucia",
-    href: "https://www.artoncapitals.com/global-citizen-programs/saint-lucia/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/saint-lucia/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2015/12/Arton_Saint-Lucia.png",
     imgAlt: "Citizenship by Investment Program for Saint Lucia",
   },
   {
     title: "St. Kitts & Nevis",
-    href: "https://www.artoncapitals.com/global-citizen-programs/st-kitts-nevis/",
+    href: "https://www.artonscapitalholdings.com/global-citizen-programs/st-kitts-nevis/",
     imgSrc:
       "https://www.artoncapital.com/wp-content/uploads/2013/07/Arton-StKitts.png",
     imgAlt: "Citizenship by Investment Program for St. Kitts & Nevis",
@@ -221,7 +221,7 @@ export default function HighNetWorthInvestorsPage() {
               Every future Global Citizen starts their discovery process through
               the{" "}
               <a
-                href="https://www.artoncapitals.com/tools/arton-index/"
+                href="https://www.artonscapitalholdings.com/tools/arton-index/"
                 className="font-semibold text-[#cc9966] underline"
               >
                 Arton Index
@@ -231,7 +231,7 @@ export default function HighNetWorthInvestorsPage() {
               options in an easy-to-follow table. To fine-tune their selection,
               investors move on to the{" "}
               <a
-                href="https://www.artoncapitals.com/tools/program-match/"
+                href="https://www.artonscapitalholdings.com/tools/program-match/"
                 className="font-semibold text-[#cc9966] underline"
               >
                 Program Match
@@ -239,7 +239,7 @@ export default function HighNetWorthInvestorsPage() {
               tool to shortlist the program(s) that best meet their goals. These
               tools are just one of the unique features that Arton offers to its{" "}
               <a
-                href="https://www.artoncapitals.com/certified-partners/"
+                href="https://www.artonscapitalholdings.com/certified-partners/"
                 className="font-semibold text-[#cc9966] underline"
               >
                 Certified Partners
@@ -289,7 +289,7 @@ export default function HighNetWorthInvestorsPage() {
                 Need more information?
               </p>
               <a
-                href="https://www.artoncapitals.com/become-a-global-citizen/"
+                href="https://www.artonscapitalholdings.com/become-a-global-citizen/"
                 className="inline-flex items-center rounded-sm bg-[#cc9966] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-black"
               >
                 Contact us

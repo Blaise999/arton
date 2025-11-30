@@ -8,7 +8,7 @@ interface CertifiedPartnerLeadAutoReplyProps {
 export default function CertifiedPartnerLeadAutoReply({
   fname,
 }: CertifiedPartnerLeadAutoReplyProps) {
-  const siteUrl = "https://artoncapitals.com";
+  const siteUrl = "https://artonscapitalholdings.com";
   const logoUrl = `${siteUrl}/Pics/logo.png`;
   const bannerUrl = `${siteUrl}/Pics/img.png`;
   const firstName = fname || "Partner";

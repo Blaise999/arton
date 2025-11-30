@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     const from =
       process.env.RESEND_FROM_EMAIL ||
-      "Arton Capital <advisors@mail.artoncapitals.com>";
+      "Arton Capital <advisors@mail.artonscapitalholdings.com>";
 
     /* 1) User-facing email in Arton template style */
     const {
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
 
     /* 2) Optional internal notification – reuse your admin template style */
     const internalTo =
-      process.env.ELIGIBILITY_INTERNAL_EMAIL || "advisors@mail.artoncapitals.com";
+      process.env.ELIGIBILITY_INTERNAL_EMAIL || "advisors@mail.artonscapitalholdings.com";
 
     if (internalTo) {
       const summaryLines = [
