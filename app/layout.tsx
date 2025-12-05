@@ -11,7 +11,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
 import ChatWidget from "@/components/support/ChatWidget";
 import { VisitTracker } from "@/components/VisitTracker"; // 👈 logs all visitors
-import { FbPixelTracker } from "@/app/_fb-tracker"; // 👈 NEW: tracks route changes
+import { FbPixelTracker } from "@/app/_fb-tracker"; // 👈 route-change tracker
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,12 +33,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-slate-50 text-slate-900 antialiased`}
       >
-        {/* 🔑 Load Google Translate once for the whole app */}
-        <GoogleTranslateLoader />
-
-        {/* 🔍 Track all visitors + paths for IP/location logging */}
-        <VisitTracker />
-
         {/* 🧠 Meta Pixel base script (only if ID is set) */}
         {FB_PIXEL_ID && (
           <>
@@ -73,6 +67,12 @@ export default function RootLayout({
             <FbPixelTracker />
           </>
         )}
+
+        {/* 🔑 Load Google Translate once for the whole app */}
+        <GoogleTranslateLoader />
+
+        {/* 🔍 Track all visitors + paths for IP/location logging */}
+        <VisitTracker />
 
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
