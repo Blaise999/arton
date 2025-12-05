@@ -2,6 +2,7 @@
 "use client";
 
 import type { FormEvent } from "react";
+import { event as fbEvent } from "@/libs/metaPixel"; // 👈 Meta Pixel event helper
 
 type Props = {
   nationalities: string[];
@@ -42,6 +43,24 @@ export function BecomeGlobalCitizenForm({
             "Something went wrong while sending your request. Please try again."
         );
         return;
+      }
+
+      // 🔔 Meta Pixel: track a Lead event on successful submission
+      try {
+        fbEvent("Lead", {
+          value: 0, // or estimated value of a qualified lead
+          currency: "USD",
+          content_name: "Become a Global Citizen Lead",
+          // useful extra fields for better reporting
+          email,
+          first_name: fname,
+          nationality: formData.get("nationality") || undefined,
+          country: formData.get("country") || undefined,
+          program_of_interest:
+            formData.get("program-of-interest") || undefined,
+        });
+      } catch (err) {
+        console.warn("Failed to send Meta Pixel Lead event:", err);
       }
 
       // Same UX you had before

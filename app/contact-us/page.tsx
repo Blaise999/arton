@@ -4,6 +4,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata = {
   title: "Contact | Citizenship By Investment Advisors",
@@ -95,12 +96,18 @@ export default function ContactPage() {
             </ul>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <a
+              <TrackedLink
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="rounded-lg bg-[#cc9966] px-5 py-3 text-sm font-semibold text-black hover:brightness-110"
+                eventName="Contact"
+                eventProps={{
+                  contact_method: "Email",
+                  contact_location: "Hero CTA Button",
+                  contact_email: CONTACT_EMAIL,
+                }}
               >
                 Email Our Team
-              </a>
+              </TrackedLink>
               <Link
                 href="/citizen-by-investment#cta"
                 className="rounded-lg border border-white/25 px-5 py-3 text-sm font-semibold text-white hover:bg-white/5"
@@ -120,12 +127,18 @@ export default function ContactPage() {
               <p className="mt-2 text-sm text-white/70">
                 Send all enquiries, documentation and follow-ups to:
               </p>
-              <a
+              <TrackedLink
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="mt-3 inline-block font-mono text-base font-semibold text-[#f5d2a0] md:text-lg"
+                eventName="Contact"
+                eventProps={{
+                  contact_method: "Email",
+                  contact_location: "Primary Email Card",
+                  contact_email: CONTACT_EMAIL,
+                }}
               >
                 {CONTACT_EMAIL}
-              </a>
+              </TrackedLink>
               <p className="mt-3 text-xs text-white/65">
                 Please include your full name, country of residence, family
                 composition and preferred program (if any). This allows us to
@@ -159,14 +172,21 @@ export default function ContactPage() {
                           <p className="text-[11px] font-semibold uppercase tracking-wide text-white/60">
                             {line.label}
                           </p>
-                          <a
+                          <TrackedLink
                             href={waLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-1 inline-block text-base font-semibold text-[#cc9966] group-hover:underline"
+                            eventName="Contact"
+                            eventProps={{
+                              contact_method: "WhatsApp",
+                              contact_location: "WhatsApp Card",
+                              contact_label: line.label,
+                              contact_number: line.number,
+                            }}
                           >
                             {line.number}
-                          </a>
+                          </TrackedLink>
                         </div>
                         <div className="rounded-full border border-white/20 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white/70">
                           WhatsApp Chat
