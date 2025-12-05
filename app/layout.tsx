@@ -9,6 +9,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
 import ChatWidget from "@/components/support/ChatWidget";
 import { VisitTracker } from "@/components/VisitTracker"; // 👈 logs all visitors
+import { MetaPixel } from "./MetaPixel"; // 👈 add this
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,9 @@ export default function RootLayout({
 
         {/* 🔍 Track all visitors + paths for IP/location logging */}
         <VisitTracker />
+
+        {/* 📊 Meta Pixel – fires PageView on every route */}
+        <MetaPixel />
 
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
