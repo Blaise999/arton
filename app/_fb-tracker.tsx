@@ -1,20 +1,24 @@
-"use client";
+// lib/fbPixel.ts
+export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { pageview } from "@/libs/metaPixel";
+const hasWindow = () => typeof window !== "undefined";
 
-export function FbPixelTracker() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+export const pageview = (url?: string) => {
+  if (!FB_PIXEL_ID) return;
+  if (!hasWindow()) return;
 
-  useEffect(() => {
-    if (!pathname) return;
+  const w = window as any;
+  if (!w.fbq) return;
 
-    // track a pageview whenever route or query changes
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-    pageview(url);
-  }, [pathname, searchParams]);
+  w.fbq("track", "PageView", url ? { url } : undefined);
+};
 
-  return null;
-}
+export const event = (name: string, options: Record<string, any> = {}) => {
+  if (!FB_PIXEL_ID) return;
+  if (!hasWindow()) return;
+
+  const w = window as any;
+  if (!w.fbq) return;
+
+  w.fbq("track", name, options);
+};
