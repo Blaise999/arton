@@ -11,7 +11,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { GoogleTranslateLoader } from "@/components/GoogleTranslateLoader";
 import ChatWidget from "@/components/support/ChatWidget";
 import { VisitTracker } from "@/components/VisitTracker"; // 👈 logs all visitors
-import { FbPixelTracker } from "@/app/_fb-tracker"; // 👈 route-change tracker
+import { FbPixelTracker } from "./_fb-tracker"; // 👈 route-change tracker (correct path)
 
 const inter = Inter({ subsets: ["latin"] });
 
