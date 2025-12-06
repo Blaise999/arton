@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "lint": "eslint",
-    "build:passport-map": "node ./app/scripts/build-passport-map.mjs"
+    "build:passport-map": "node init && node ./app/scripts/build-passport-map.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
