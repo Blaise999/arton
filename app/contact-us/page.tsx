@@ -5,6 +5,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TrackedLink } from "@/components/TrackedLink";
+import { ContactPixelEvents } from "./ContactPixelEvents"; // 👈 Meta "Contact" event
 
 export const metadata = {
   title: "Contact | Citizenship By Investment Advisors",
@@ -60,6 +61,9 @@ export default function ContactPage() {
   return (
     // pt-* ensures content starts just under the global layout header
     <main className="min-h-screen bg-black pt-16 text-white md:pt-20">
+      {/* 🔔 Fire Meta "Contact" event when user views this page */}
+      <ContactPixelEvents />
+
       {/* Hero section */}
       <section className="relative border-b border-white/10">
         <div className="absolute inset-0">
@@ -165,11 +169,11 @@ export default function ContactPage() {
                   return (
                     <div
                       key={line.number}
-                      className="group rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm transition hover:border-[#cc9966] hover:bg-white/10"
+                      className="group rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm transition hover:border-[#cc9966] hover:bg:white/10"
                     >
                       <div className="flex items-center justify-between gap-3">
                         <div>
-                          <p className="text-[11px] font-semibold uppercase tracking-wide text-white/60">
+                          <p className="text-[11px] font-semibold uppercase tracking-wide text:white/60">
                             {line.label}
                           </p>
                           <TrackedLink
