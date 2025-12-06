@@ -10,7 +10,6 @@ export function MetaPixelRouteTracker() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Fire a PageView on every route change
     pageview();
   }, [pathname, searchParams]);
 

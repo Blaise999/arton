@@ -9,7 +9,6 @@ export function MetaPixel() {
 
   return (
     <>
-      {/* Base Pixel code */}
       <Script id="fb-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
@@ -25,7 +24,6 @@ export function MetaPixel() {
         `}
       </Script>
 
-      {/* No-script fallback */}
       <noscript
         dangerouslySetInnerHTML={{
           __html: `
