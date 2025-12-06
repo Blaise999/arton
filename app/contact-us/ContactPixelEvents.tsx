@@ -1,12 +1,11 @@
-// app/.../ContactPixelEvents.tsx
 "use client";
 
 import { useEffect } from "react";
-import { event } from "@/libs/metaPixel"; // note: lib, not libs
+import { event } from "@/libs/metaPixel";
 
 export function ContactPixelEvents() {
   useEffect(() => {
-    event("Contact"); // Meta standard Contact event
+    event("Contact"); // logs a Contact event
   }, []);
 
   return null;
