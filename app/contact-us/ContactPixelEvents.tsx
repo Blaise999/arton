@@ -1,12 +1,12 @@
+// app/.../ContactPixelEvents.tsx
 "use client";
 
 import { useEffect } from "react";
-import { fbq } from "@/libs/fbq";
+import { event } from "@/libs/metaPixel"; // note: lib, not libs
 
 export function ContactPixelEvents() {
   useEffect(() => {
-    // Standard Meta event for contact pages
-    fbq("track", "Contact");
+    event("Contact"); // Meta standard Contact event
   }, []);
 
   return null;
