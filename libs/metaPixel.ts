@@ -1,16 +1,25 @@
 // lib/fbPixel.ts
-export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || ''
+export const FB_PIXEL_ID =
+  process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "3224981534335896";
+
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+  }
+}
+
+// Simple guard so we don't explode on the server
+const hasFbq = () =>
+  typeof window !== "undefined" && typeof window.fbq === "function";
 
 // Standard pageview event
-export const pageview = (url: string) => {
-  if (!FB_PIXEL_ID) return
-  // @ts-ignore
-  window.fbq('track', 'PageView')
-}
+export const pageview = () => {
+  if (!FB_PIXEL_ID || !hasFbq()) return;
+  window.fbq!("track", "PageView");
+};
 
 // Custom event helper
 export const event = (name: string, options: Record<string, any> = {}) => {
-  if (!FB_PIXEL_ID) return
-  // @ts-ignore
-  window.fbq('track', name, options)
-}
+  if (!FB_PIXEL_ID || !hasFbq()) return;
+  window.fbq!("track", name, options);
+};
